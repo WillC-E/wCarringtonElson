@@ -43,3 +43,233 @@ Migrating to CreateUsers (20190416125055)
   ↳ bin/rails:9
   [1m[35m (4.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
   ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-04-16 14:16:52 +0100
+  [1m[35m (0.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (8.0ms)
+Completed 200 OK in 72ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/home" for ::1 at 2019-04-16 14:16:59 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 8050ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_path' for #<#<Class:0x00007f47e4db4178>:0x00007f47e4d9e120>
+Did you mean?  users_new_path):
+    32:         <a class="p-2 text-dark" href="#"> <%= link_to "Home", '#' %> </a>
+    33:         <a class="p-2 text-dark" href="#"> <%= link_to "About", '#' %> </a>
+    34:         <a class="p-2 text-dark" href="#"> <%= link_to "Contact", '#' %> </a>
+    35:         <a class="p-2 text-dark" href="#"> <%= link_to "Create Account", new_user_path  %> </a>
+    36: 
+    37:        
+    38:       </nav>
+  
+app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb__3152267836812401812_69973379404120'
+Started GET "/" for ::1 at 2019-04-16 14:23:38 +0100
+  [1m[35m (37.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 994ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_session_path' for #<#<Class:0x00007f47dc221228>:0x000055939290ec20>
+Did you mean?  new_user_path):
+    49:       </a>
+    50:       <% else %>
+    51:       <a class="p-2 text-dark" href="#">
+    52:         <%= link_to 'Log in', new_session_path, class: "active_nav_link" %>
+    53:       </a>
+    54: 
+    55:       <% end %>
+  
+app/views/layouts/application.html.erb:52:in `_app_views_layouts_application_html_erb__3152267836812401812_69973306347460'
+Started GET "/" for ::1 at 2019-04-16 14:26:06 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 159ms (Views: 157.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-04-16 14:26:21 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 123ms (Views: 120.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-04-16 14:26:38 +0100
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:10:in `new'
+Started GET "/users/new" for ::1 at 2019-04-16 14:28:38 +0100
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 30.9ms)
+
+
+  
+NoMethodError (undefined method `validates_uniquness_of' for #<Class:0x00007f0394b9e238>
+Did you mean?  validates_uniqueness_of):
+  
+app/models/user.rb:3:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:10:in `new'
+Started GET "/users/new" for ::1 at 2019-04-16 14:31:04 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 854ms (Views: 820.0ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/users" for ::1 at 2019-04-16 14:31:28 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IqxBz8LZRa8KbxnZjdkA6jzKYiBaX9xRSJZdboNYSvEf3ZvMAVcX25A2Th4vBeQ4lxoZcJgFHjWr6v91wusvyg==", "user"=>{"userId"=>"willce", "email"=>"b5020855@my.shu.ac.uk", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create"}
+  [1m[35m (11.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Exists (13.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'b5020855@my.shu.ac.uk' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Create (4.0ms)[0m  [1m[32mINSERT INTO `users` (`userId`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('willce', 'b5020855@my.shu.ac.uk', '$2a$10$ac0LgH29Y4M0MyHr3fT2relgF0WPuDSYZOFvkyVrX8oDITEUGa/wW', '2019-04-16 13:31:28', '2019-04-16 13:31:28')[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (9.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15
+Redirected to http://localhost:3000/static_pages/home
+Completed 302 Found in 209ms (ActiveRecord: 37.7ms)
+
+
+Started GET "/static_pages/home" for ::1 at 2019-04-16 14:31:28 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 100ms (Views: 99.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/index" for ::1 at 2019-04-16 14:31:58 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 151ms (Views: 149.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-04-16 14:32:07 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 73ms (Views: 72.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-04-16 14:32:09 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"44ZFyiohqbxVxdf66kbvBrm61NaNizMPhGxIG/RUhq6cx8ysz0BEOiloSEgYw7mQC4UIAVxgmEPYUbKufNp94A==", "userId"=>"willce", "password"=>"[FILTERED]", "commit"=>"Log in"}
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find_by_userid' for #<Class:0x00007f03944218c0>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started POST "/sessions" for ::1 at 2019-04-16 14:32:49 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KiUeyqodSeB7vbW5ak7b3LRbLQ/hH4yQWgj8cLTYlrgXVMTJaZMblOHk4n7Ikj8OH4tWXyNFTvS5dF5r9Wvzgw==", "userId"=>"willce", "password"=>"[FILTERED]", "commit"=>"Log in"}
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 6.1ms)
+
+
+  
+NoMethodError (undefined method `find_by_userid' for #<Class:0x00007f039d151e70>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started GET "/sessions/new" for ::1 at 2019-04-16 14:33:01 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 124ms (Views: 123.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-04-16 14:33:02 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kuQayt6yiGJ3CvYP/OxV292TdL21f/iQnWQqzAZRb9evlcDJHTzaFu1TocheMLEJdkMP7XclOvR+GIjXR+IK7A==", "userId"=>"willce", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userId` = 'willce' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/
+Completed 302 Found in 222ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/" for ::1 at 2019-04-16 14:33:02 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 103ms (Views: 101.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2019-04-16 14:33:13 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (8.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 105ms (Views: 104.2ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/sessions/active" for ::1 at 2019-04-16 14:34:29 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"++DIxkAlkvcARgGB9nYxs6EAqcvjEFy05/YW0UHGUIzGkRLFg6vAg5ofVkZUqtVhCtDSmyFKntAEirTKAHU1tw==", "id"=>"active"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-04-16 14:34:29 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 121ms (Views: 120.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-04-16 14:34:32 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 90ms (Views: 89.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-04-16 14:34:34 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/5STkWdHf1N9zV5vuRVc2Vc8Qco1kxgvFCCTS9dsiO6A1Rr3giaS1QFgwd1LkApP5QOdHeR4s2NIHWn+X+JzoA==", "userId"=>"willce", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userId` = 'willce' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/
+Completed 302 Found in 207ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-04-16 14:34:34 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 102ms (Views: 100.7ms | ActiveRecord: 0.7ms)
+
+

@@ -273,3 +273,308 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 102ms (Views: 100.7ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/" for ::1 at 2019-04-16 14:53:01 +0100
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 1012ms (Views: 987.1ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/profiles/new" for ::1 at 2019-04-16 14:53:09 +0100
+  
+SyntaxError (/home/jbloggs/myRubyApps/wCarringtonElson/reviewApp/app/controllers/profiles_controller.rb:28: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/profiles_controller.rb:28: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/profiles/new" for ::1 at 2019-04-16 14:54:04 +0100
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (51.7ms)
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `Address' for #<Profile:0x00007f1950e8f970>
+Did you mean?  address?
+               address=):
+    16: 
+    17: <div class="form-group">
+    18:     <%= f.label :Address %><br />
+    19:     <%= f.text_field :Address, class:'form-control' %> <br />
+    20: </div>
+    21: 
+    22: 
+  
+app/views/profiles/new.html.erb:19:in `block in _app_views_profiles_new_html_erb___4379641690413138299_47075558088600'
+app/views/profiles/new.html.erb:5:in `_app_views_profiles_new_html_erb___4379641690413138299_47075558088600'
+Started GET "/profiles/new" for ::1 at 2019-04-16 14:54:47 +0100
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (17.2ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `Address' for #<Profile:0x00007f19586428c8>
+Did you mean?  address?
+               address=):
+    16: 
+    17: <div class="form-group">
+    18:     <%= f.label :Address %><br />
+    19:     <%= f.text_field :Address, class:'form-control' %> <br />
+    20: </div>
+    21: 
+    22: 
+  
+app/views/profiles/new.html.erb:19:in `block in _app_views_profiles_new_html_erb___4379641690413138299_69873416931840'
+app/views/profiles/new.html.erb:5:in `_app_views_profiles_new_html_erb___4379641690413138299_69873416931840'
+Started GET "/profiles/new" for ::1 at 2019-04-16 14:54:50 +0100
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (12.2ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `Address' for #<Profile:0x00007f1951845ed8>
+Did you mean?  address?
+               address=):
+    16: 
+    17: <div class="form-group">
+    18:     <%= f.label :Address %><br />
+    19:     <%= f.text_field :Address, class:'form-control' %> <br />
+    20: </div>
+    21: 
+    22: 
+  
+app/views/profiles/new.html.erb:19:in `block in _app_views_profiles_new_html_erb___4379641690413138299_69873359246880'
+app/views/profiles/new.html.erb:5:in `_app_views_profiles_new_html_erb___4379641690413138299_69873359246880'
+Started GET "/profiles/new" for ::1 at 2019-04-16 14:55:13 +0100
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (17.0ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `Address' for #<Profile:0x00007f195834bc78>
+Did you mean?  address?
+               address=):
+    16: 
+    17: <div class="form-group">
+    18:     <%= f.label :Address %><br />
+    19:     <%= f.text_field :Address, class:'form-control' %> <br />
+    20: </div>
+    21: 
+    22: 
+  
+app/views/profiles/new.html.erb:19:in `block in _app_views_profiles_new_html_erb___4379641690413138299_69873415377860'
+app/views/profiles/new.html.erb:5:in `_app_views_profiles_new_html_erb___4379641690413138299_69873415377860'
+Started GET "/profiles/new" for ::1 at 2019-04-16 14:55:21 +0100
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 188ms (Views: 167.1ms | ActiveRecord: 19.9ms)
+
+
+Started GET "/profiles/new" for ::1 at 2019-04-16 14:55:29 +0100
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 97ms (Views: 93.3ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/profiles" for ::1 at 2019-04-16 14:55:42 +0100
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lxLY/MlT71Os54b3Azy9gpY8w/4MNtp/2cGGxoveheaau/WOaYdIwh4JwY6vB+UeEf5a2lBJpEzMYYdMwNpESg==", "profile"=>{"fullName"=>"Will", "dob"=>"1991-07-16", "address"=>"123 Road", "city"=>"Sheffield", "country"=>"UK"}, "commit"=>"Submit"}
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:16
+  [1m[36mProfile Create (3.3ms)[0m  [1m[32mINSERT INTO `profiles` (`fullName`, `dob`, `address`, `city`, `country`, `created_at`, `updated_at`) VALUES ('Will', '1991-07-16', '123 Road', 'Sheffield', 'UK', '2019-04-16 13:55:42', '2019-04-16 13:55:42')[0m
+  ↳ app/controllers/profiles_controller.rb:16
+  [1m[35m (9.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:16
+Redirected to http://localhost:3000/profiles
+Completed 302 Found in 22ms (ActiveRecord: 14.9ms)
+
+
+Started GET "/profiles" for ::1 at 2019-04-16 14:55:42 +0100
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 147ms (Views: 143.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/profiles" for ::1 at 2019-04-16 14:57:13 +0100
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (8.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 150ms (Views: 137.7ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/profiles" for ::1 at 2019-04-16 14:57:18 +0100
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k7M5oRK098kgdelanCxRwyNjMPS18xK/Zvc3mu0vyyCuwuOi0Tqlvbosvp0+8LURiLNLpHep0NuFi5WBrJyuGw==", "profile"=>{"fullName"=>"Will", "dob"=>"1991-07-16", "address"=>"123 Road", "city"=>"Sheffield", "country"=>"UK"}, "commit"=>"Submit"}
+  [1m[35m (8.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:16
+  [1m[36mProfile Create (0.6ms)[0m  [1m[32mINSERT INTO `profiles` (`fullName`, `dob`, `address`, `city`, `country`, `created_at`, `updated_at`) VALUES ('Will', '1991-07-16', '123 Road', 'Sheffield', 'UK', '2019-04-16 13:57:18', '2019-04-16 13:57:18')[0m
+  ↳ app/controllers/profiles_controller.rb:16
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:16
+Redirected to http://localhost:3000/profiles.2
+Completed 302 Found in 45ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/profiles.2" for ::1 at 2019-04-16 14:57:18 +0100
+Processing by ProfilesController#index as 
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 150ms (Views: 144.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/profiles/new" for ::1 at 2019-04-16 14:57:37 +0100
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 176ms (Views: 155.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/profiles" for ::1 at 2019-04-16 14:57:55 +0100
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IA7uYank5E+3gOED6ZTpyjqHw/75+9+a/0gBtW+q1wkdfzRiamq2Oy3ZtsRLSA0YkVe4rjuhHf4cNKOuLhmyMg==", "profile"=>{"fullName"=>"Will", "dob"=>"1111-11-01", "address"=>"123 Road", "city"=>"Sheffield", "country"=>"UK"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:16
+  [1m[36mProfile Create (7.9ms)[0m  [1m[32mINSERT INTO `profiles` (`fullName`, `dob`, `address`, `city`, `country`, `created_at`, `updated_at`) VALUES ('Will', '1111-11-01', '123 Road', 'Sheffield', 'UK', '2019-04-16 13:57:55', '2019-04-16 13:57:55')[0m
+  ↳ app/controllers/profiles_controller.rb:16
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:16
+Redirected to http://localhost:3000/profiles/3
+Completed 302 Found in 46ms (ActiveRecord: 15.1ms)
+
+
+Started GET "/profiles/3" for ::1 at 2019-04-16 14:57:56 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProfile Load (4.6ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:11
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 139ms (Views: 124.7ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/profiles/3" for ::1 at 2019-04-16 15:02:05 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProfile Load (5.4ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:11
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 5.4ms)
+
+
+  
+SyntaxError (/home/jbloggs/myRubyApps/wCarringtonElson/reviewApp/app/views/profiles/show.html.erb:4: syntax error, unexpected tLABEL, expecting '='
+...end=( @profile.fullName, class:'form-control' );@output_buff...
+...                         ^~~~~~
+/home/jbloggs/myRubyApps/wCarringtonElson/reviewApp/app/views/profiles/show.html.erb:5: syntax error, unexpected tLABEL, expecting '='
+...r.append=( @profile.dob, class:'form-control' );@output_buff...
+...                         ^~~~~~
+/home/jbloggs/myRubyApps/wCarringtonElson/reviewApp/app/views/profiles/show.html.erb:6: syntax error, unexpected tLABEL, expecting '='
+...pend=( @profile.address, class:'form-control' );@output_buff...
+...                         ^~~~~~
+/home/jbloggs/myRubyApps/wCarringtonElson/reviewApp/app/views/profiles/show.html.erb:7: syntax error, unexpected tLABEL, expecting '='
+...append=( @profile.city , class:'form-control' );@output_buff...
+...                         ^~~~~~
+/home/jbloggs/myRubyApps/wCarringtonElson/reviewApp/app/views/profiles/show.html.erb:8: syntax error, unexpected tLABEL, expecting '='
+...end=( @profile.country , class:'form-control' );@output_buff...
+...                         ^~~~~~):
+  
+app/views/profiles/show.html.erb:4: syntax error, unexpected tLABEL, expecting '='
+app/views/profiles/show.html.erb:5: syntax error, unexpected tLABEL, expecting '='
+app/views/profiles/show.html.erb:6: syntax error, unexpected tLABEL, expecting '='
+app/views/profiles/show.html.erb:7: syntax error, unexpected tLABEL, expecting '='
+app/views/profiles/show.html.erb:8: syntax error, unexpected tLABEL, expecting '='
+Started GET "/profiles/new" for ::1 at 2019-04-16 15:02:12 +0100
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 140ms (Views: 136.8ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/profiles" for ::1 at 2019-04-16 15:02:27 +0100
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fjDHY4N8umTM2jwL3jNotz+rUZM/OqgtORdAO8rWL41DQR1gQPLoEFaDa8x874xllHsqw/1gaknaa+Igi2VKtg==", "profile"=>{"fullName"=>"Will", "dob"=>"1991-07-16", "address"=>"123 Road", "city"=>"Sheffield", "country"=>"UK"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:16
+  [1m[36mProfile Create (14.6ms)[0m  [1m[32mINSERT INTO `profiles` (`fullName`, `dob`, `address`, `city`, `country`, `created_at`, `updated_at`) VALUES ('Will', '1991-07-16', '123 Road', 'Sheffield', 'UK', '2019-04-16 14:02:27', '2019-04-16 14:02:27')[0m
+  ↳ app/controllers/profiles_controller.rb:16
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:16
+Redirected to http://localhost:3000/profiles/4
+Completed 302 Found in 21ms (ActiveRecord: 15.7ms)
+
+
+Started GET "/profiles/4" for ::1 at 2019-04-16 15:02:27 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProfile Load (2.8ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:11
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.8ms)
+
+
+  
+SyntaxError (/home/jbloggs/myRubyApps/wCarringtonElson/reviewApp/app/views/profiles/show.html.erb:4: syntax error, unexpected tLABEL, expecting '='
+...end=( @profile.fullName, class:'form-control' );@output_buff...
+...                         ^~~~~~
+/home/jbloggs/myRubyApps/wCarringtonElson/reviewApp/app/views/profiles/show.html.erb:5: syntax error, unexpected tLABEL, expecting '='
+...r.append=( @profile.dob, class:'form-control' );@output_buff...
+...                         ^~~~~~
+/home/jbloggs/myRubyApps/wCarringtonElson/reviewApp/app/views/profiles/show.html.erb:6: syntax error, unexpected tLABEL, expecting '='
+...pend=( @profile.address, class:'form-control' );@output_buff...
+...                         ^~~~~~
+/home/jbloggs/myRubyApps/wCarringtonElson/reviewApp/app/views/profiles/show.html.erb:7: syntax error, unexpected tLABEL, expecting '='
+...append=( @profile.city , class:'form-control' );@output_buff...
+...                         ^~~~~~
+/home/jbloggs/myRubyApps/wCarringtonElson/reviewApp/app/views/profiles/show.html.erb:8: syntax error, unexpected tLABEL, expecting '='
+...end=( @profile.country , class:'form-control' );@output_buff...
+...                         ^~~~~~):
+  
+app/views/profiles/show.html.erb:4: syntax error, unexpected tLABEL, expecting '='
+app/views/profiles/show.html.erb:5: syntax error, unexpected tLABEL, expecting '='
+app/views/profiles/show.html.erb:6: syntax error, unexpected tLABEL, expecting '='
+app/views/profiles/show.html.erb:7: syntax error, unexpected tLABEL, expecting '='
+app/views/profiles/show.html.erb:8: syntax error, unexpected tLABEL, expecting '='
+Started GET "/profiles/4" for ::1 at 2019-04-16 15:04:55 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProfile Load (2.3ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:11
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 141ms (Views: 135.6ms | ActiveRecord: 3.1ms)
+
+

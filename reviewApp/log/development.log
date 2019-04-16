@@ -578,3 +578,621 @@ Processing by ProfilesController#show as HTML
 Completed 200 OK in 141ms (Views: 135.6ms | ActiveRecord: 3.1ms)
 
 
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT GET_LOCK('5832565980762348660', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateProfiles (20190416142216)
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE `profiles` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `fullName` varchar(255), `dob` date, `address` varchar(255), `city` varchar(255), `country` varchar(255), `photo_file_name` varchar(255), `photo_content_type` varchar(255), `photo_file_size` int, `photo_updated_at` datetime, `userid` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190416142216_create_profiles.rb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('5832565980762348660')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('5832565980762348660', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateProfiles (20190416142216)
+  [1m[35m (20.4ms)[0m  [1m[35mCREATE TABLE `profiles` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `fullName` varchar(255), `dob` date, `address` varchar(255), `city` varchar(255), `country` varchar(255), `photo_file_name` varchar(255), `photo_content_type` varchar(255), `photo_file_size` int, `photo_updated_at` datetime, `userid` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190416142216_create_profiles.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190416142216')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:9
+  [1m[35m (7.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('5832565980762348660')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Started GET "/profiles/new" for ::1 at 2019-04-16 15:37:13 +0100
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/home/jbloggs/myRubyApps/wCarringtonElson/reviewApp/app/controllers/profiles_controller.rb:28: syntax error, unexpected keyword_end, expecting ')'
+  end
+  ^~~):
+  
+app/controllers/profiles_controller.rb:28: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/profiles/new" for ::1 at 2019-04-16 15:37:38 +0100
+Processing by ProfilesController#new as HTML
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 10.9ms)
+
+
+  
+NoMethodError (undefined method `before_image_post_process' for #<Class:0x0000562cc67f4ab0>
+Did you mean?  before_post_process
+               before_photo_post_process):
+  
+app/models/profile.rb:3:in `<class:Profile>'
+app/models/profile.rb:1:in `<main>'
+app/controllers/profiles_controller.rb:7:in `new'
+Started GET "/profiles/new" for ::1 at 2019-04-16 15:39:13 +0100
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (35.5ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 907ms (Views: 856.8ms | ActiveRecord: 13.7ms)
+
+
+Started POST "/profiles" for ::1 at 2019-04-16 15:41:31 +0100
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7OJG619aYjbucQwvcmigngMeFc8Iax3XORnX9LkCqifRk5zonNQwQnQoW+jQtERMqM5un8ox37PaZXXv+LHPHA==", "profile"=>{"fullName"=>"Will", "dob"=>"1111-01-01", "address"=>"123d", "city"=>"123 Road", "country"=>"ddsf", "photo"=>#<ActionDispatch::Http::UploadedFile:0x0000562cc42e1d18 @tempfile=#<Tempfile:/tmp/RackMultipart20190416-7956-uuxv7i.jpg>, @original_filename="happy-businessman-isolated-handsome-man-260nw-609414131.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[photo]\"; filename=\"happy-businessman-isolated-handsome-man-260nw-609414131.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit"}
+[paperclip] Trying to link /tmp/RackMultipart20190416-7956-uuxv7i.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1h44h2i.jpg
+[paperclip] Trying to link /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1h44h2i.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-vc7q0d.jpg
+Command :: file -b --mime '/tmp/d925024b950c390b7380159bc2cda92a20190416-7956-vc7q0d.jpg'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:16
+[paperclip] Trying to link /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1h44h2i.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-co7275.jpg
+Command :: file -b --mime '/tmp/d925024b950c390b7380159bc2cda92a20190416-7956-co7275.jpg'
+  [1m[36mProfile Create (1.9ms)[0m  [1m[32mINSERT INTO `profiles` (`fullName`, `dob`, `address`, `city`, `country`, `photo_file_name`, `photo_content_type`, `photo_file_size`, `photo_updated_at`, `created_at`, `updated_at`) VALUES ('Will', '1111-01-01', '123d', '123 Road', 'ddsf', 'happy-businessman-isolated-handsome-man-260nw-609414131.jpg', 'image/webp', 6348, '2019-04-16 14:41:31', '2019-04-16 14:41:32', '2019-04-16 14:41:32')[0m
+  ↳ app/controllers/profiles_controller.rb:16
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:16
+Redirected to http://localhost:3000/profiles/1
+Completed 302 Found in 256ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/profiles/1" for ::1 at 2019-04-16 15:41:32 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (2.0ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:11
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (21.5ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for #<Profile:0x0000562cc6bb2120>):
+     7: <p>City:<%= @profile.city %>  </p>
+     8: <p>Country: <%= @profile.country  %>   </p>
+     9: 
+    10: <p>Photo: <%= image_tag(@profile.photo.url) if @profile.image.exists? %> </p>
+    11: 
+    12: 
+    13: 
+  
+app/views/profiles/show.html.erb:10:in `_app_views_profiles_show_html_erb__1406565797891615529_47375156356700'
+Started POST "/profiles" for ::1 at 2019-04-16 15:42:02 +0100
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7OJG619aYjbucQwvcmigngMeFc8Iax3XORnX9LkCqifRk5zonNQwQnQoW+jQtERMqM5un8ox37PaZXXv+LHPHA==", "profile"=>{"fullName"=>"Will", "dob"=>"1111-01-01", "address"=>"123d", "city"=>"123 Road", "country"=>"ddsf", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007f83c1a324a0 @tempfile=#<Tempfile:/tmp/RackMultipart20190416-7956-1bpj6pq.jpg>, @original_filename="happy-businessman-isolated-handsome-man-260nw-609414131.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[photo]\"; filename=\"happy-businessman-isolated-handsome-man-260nw-609414131.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit"}
+[paperclip] Trying to link /tmp/RackMultipart20190416-7956-1bpj6pq.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1abt04x.jpg
+[paperclip] Trying to link /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1abt04x.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1tigz2x.jpg
+Command :: file -b --mime '/tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1tigz2x.jpg'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:16
+[paperclip] Trying to link /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1abt04x.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-al3bfs.jpg
+Command :: file -b --mime '/tmp/d925024b950c390b7380159bc2cda92a20190416-7956-al3bfs.jpg'
+  [1m[36mProfile Create (0.7ms)[0m  [1m[32mINSERT INTO `profiles` (`fullName`, `dob`, `address`, `city`, `country`, `photo_file_name`, `photo_content_type`, `photo_file_size`, `photo_updated_at`, `created_at`, `updated_at`) VALUES ('Will', '1111-01-01', '123d', '123 Road', 'ddsf', 'happy-businessman-isolated-handsome-man-260nw-609414131.jpg', 'image/webp', 6348, '2019-04-16 14:42:02', '2019-04-16 14:42:02', '2019-04-16 14:42:02')[0m
+  ↳ app/controllers/profiles_controller.rb:16
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:16
+Redirected to http://localhost:3000/profiles/2
+Completed 302 Found in 52ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/profiles/2" for ::1 at 2019-04-16 15:42:02 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfile Load (0.9ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:11
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 171ms (Views: 161.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/profiles/new" for ::1 at 2019-04-16 15:48:21 +0100
+  [1m[35m (1.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProfilesController#new as HTML
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 2.6ms)
+
+
+  
+NameError (undefined local variable or method `jpeg' for #<Class:0x00007f83d4239600>):
+  
+app/models/profile.rb:2:in `<class:Profile>'
+app/models/profile.rb:1:in `<main>'
+app/controllers/profiles_controller.rb:7:in `new'
+Started GET "/profiles/new" for ::1 at 2019-04-16 15:48:53 +0100
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 200ms (Views: 143.0ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/profiles" for ::1 at 2019-04-16 15:49:09 +0100
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sEbTGwm5peL2QUc+DZ8Cy8reIjCs5Nln5FqZzlIh0NCNNwkYyjf3lmwYEPmvQ+YZYQ5ZYG6+GwMHJjvVE5K16w==", "profile"=>{"fullName"=>"Will", "dob"=>"1555-05-16", "address"=>"123 Road", "city"=>"Sheffield", "country"=>"UK", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007f83c20761b8 @tempfile=#<Tempfile:/tmp/RackMultipart20190416-7956-knkab7.jpg>, @original_filename="happy-businessman-isolated-handsome-man-260nw-609414131.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[photo]\"; filename=\"happy-businessman-isolated-handsome-man-260nw-609414131.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit"}
+[paperclip] Trying to link /tmp/RackMultipart20190416-7956-knkab7.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-ig29n5.jpg
+[paperclip] Trying to link /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-ig29n5.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-rgzvbn.jpg
+Command :: file -b --mime '/tmp/d925024b950c390b7380159bc2cda92a20190416-7956-rgzvbn.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/d925024b950c390b7380159bc2cda92a20190416-7956-ig29n5.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/d925024b950c390b7380159bc2cda92a20190416-7956-ig29n5.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+  [1m[35m (3.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:16
+[paperclip] Trying to link /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-ig29n5.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-tzkn84.jpg
+Command :: file -b --mime '/tmp/d925024b950c390b7380159bc2cda92a20190416-7956-tzkn84.jpg'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/profiles_controller.rb:16
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 443ms (Views: 126.3ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/profiles/new" for ::1 at 2019-04-16 15:50:40 +0100
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (26.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 224ms (Views: 184.3ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/profiles" for ::1 at 2019-04-16 15:50:59 +0100
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZCRhvRCgBH0Zb8/fOkAN3EOe2O6fCdLtEeveSJm7J/tZVbu+0y5WCYM2mBiYnOkO6E6jvl1TEInyl3xT2AhCwA==", "profile"=>{"fullName"=>"Will", "dob"=>"1555-07-16", "address"=>"123 Road", "city"=>"Sheffield", "country"=>"UK", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007f83c16fd8e8 @tempfile=#<Tempfile:/tmp/RackMultipart20190416-7956-yyv6at.jpg>, @original_filename="happy-businessman-isolated-handsome-man-260nw-609414131.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[photo]\"; filename=\"happy-businessman-isolated-handsome-man-260nw-609414131.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit"}
+[paperclip] Trying to link /tmp/RackMultipart20190416-7956-yyv6at.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1p983o0.jpg
+[paperclip] Trying to link /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1p983o0.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-11fk8jl.jpg
+Command :: file -b --mime '/tmp/d925024b950c390b7380159bc2cda92a20190416-7956-11fk8jl.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1p983o0.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:16
+[paperclip] Trying to link /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1p983o0.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1t1i5tq.jpg
+Command :: file -b --mime '/tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1t1i5tq.jpg'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/profiles_controller.rb:16
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 209ms (Views: 119.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/profiles/new" for ::1 at 2019-04-16 15:52:41 +0100
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (15.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 146ms (Views: 144.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/profiles" for ::1 at 2019-04-16 15:52:56 +0100
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1nlM7BaT4LspZrZjsXapfd9NfS1HE4GZoX5xuH48P0/rCJbv1R2yz7M/4aQTqk2vdJ0GfYVJQ/1CAtOjP49adA==", "profile"=>{"fullName"=>"Will", "dob"=>"1415-05-16", "address"=>"123 Road", "city"=>"Sheffield", "country"=>"UK", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007f83c19f5910 @tempfile=#<Tempfile:/tmp/RackMultipart20190416-7956-72iq3c.jpg>, @original_filename="happy-businessman-isolated-handsome-man-260nw-609414131.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[photo]\"; filename=\"happy-businessman-isolated-handsome-man-260nw-609414131.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit"}
+[paperclip] Trying to link /tmp/RackMultipart20190416-7956-72iq3c.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1a23ira.jpg
+[paperclip] Trying to link /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1a23ira.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-3s1khh.jpg
+Command :: file -b --mime '/tmp/d925024b950c390b7380159bc2cda92a20190416-7956-3s1khh.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1a23ira.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:16
+[paperclip] Trying to link /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1a23ira.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-izruch.jpg
+Command :: file -b --mime '/tmp/d925024b950c390b7380159bc2cda92a20190416-7956-izruch.jpg'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/profiles_controller.rb:16
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 220ms (Views: 128.8ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/profiles/new" for ::1 at 2019-04-16 16:22:16 +0100
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (8.1ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 238ms (Views: 177.0ms | ActiveRecord: 12.8ms)
+
+
+Started POST "/profiles" for ::1 at 2019-04-16 16:23:02 +0100
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MbBNiGRuc5xBdMRMMPChrj12lclhdPzmEDQEQKUZXvsMwZeLp+Ah6Nstk4uSLEV8lqbumaMuPoLzSKZb5Ko7wA==", "profile"=>{"fullName"=>"Will", "dob"=>"1111-11-11", "address"=>"123 Road", "city"=>"Sheffield", "country"=>"UK", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007f83cc8ad7a0 @tempfile=#<Tempfile:/tmp/RackMultipart20190416-7956-1egkj1s.jpg>, @original_filename="happy-businessman-isolated-handsome-man-260nw-609414131.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[photo]\"; filename=\"happy-businessman-isolated-handsome-man-260nw-609414131.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit"}
+[paperclip] Trying to link /tmp/RackMultipart20190416-7956-1egkj1s.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-qzynsf.jpg
+[paperclip] Trying to link /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-qzynsf.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1k8xom0.jpg
+Command :: file -b --mime '/tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1k8xom0.jpg'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:16
+[paperclip] Trying to link /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-qzynsf.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1jmn7za.jpg
+Command :: file -b --mime '/tmp/d925024b950c390b7380159bc2cda92a20190416-7956-1jmn7za.jpg'
+  [1m[36mProfile Create (0.6ms)[0m  [1m[32mINSERT INTO `profiles` (`fullName`, `dob`, `address`, `city`, `country`, `photo_file_name`, `photo_content_type`, `photo_file_size`, `photo_updated_at`, `created_at`, `updated_at`) VALUES ('Will', '1111-11-11', '123 Road', 'Sheffield', 'UK', 'happy-businessman-isolated-handsome-man-260nw-609414131.jpg', 'image/webp', 6348, '2019-04-16 15:23:02', '2019-04-16 15:23:02', '2019-04-16 15:23:02')[0m
+  ↳ app/controllers/profiles_controller.rb:16
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:16
+Redirected to http://localhost:3000/profiles/3
+Completed 302 Found in 88ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/profiles/3" for ::1 at 2019-04-16 16:23:03 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProfile Load (5.3ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:11
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (20.9ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 5.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `symbolize_keys' for "height:150px;height:150px;":String):
+     7: <p>City:<%= @profile.city %>  </p>
+     8: <p>Country: <%= @profile.country  %>   </p>
+     9: 
+    10: <p>Photo: <%= image_tag(@profile.photo.url, style='height:150px;height:150px;') if @profile.photo.exists? %> </p>
+    11: 
+    12: 
+    13: 
+  
+app/views/profiles/show.html.erb:10:in `_app_views_profiles_show_html_erb__1406565797891615529_70102024897140'
+Started GET "/profiles/3" for ::1 at 2019-04-16 16:23:31 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:11
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (31.8ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `symbolize_keys' for "height:150px;width:150px;":String):
+     7: <p>City:<%= @profile.city %>  </p>
+     8: <p>Country: <%= @profile.country  %>   </p>
+     9: 
+    10: <p>Photo: <%= image_tag(@profile.photo.url, style='height:150px;width:150px;') if @profile.photo.exists? %> </p>
+    11: 
+    12: 
+    13: 
+  
+app/views/profiles/show.html.erb:10:in `_app_views_profiles_show_html_erb__1406565797891615529_47375159426340'
+Started GET "/profiles/3" for ::1 at 2019-04-16 16:25:08 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProfile Load (2.3ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:11
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 160ms (Views: 154.1ms | ActiveRecord: 3.6ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (7.9ms)[0m  [1m[34mSELECT GET_LOCK('5832565980762348660', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateProducts (20190416153302)
+  [1m[35m (36.0ms)[0m  [1m[35mCREATE TABLE `products` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `productName` varchar(255), `brand` varchar(255), `avgCost` int, `category` varchar(255), `releaseDate` date, `description` varchar(255), `prodPhoto_file_name` varchar(255), `prodPhoto_content_type` varchar(255), `prodPhoto_file_size` int, `prodPhoto_updated_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190416153302_create_products.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (2.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190416153302')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('5832565980762348660')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Started GET "/products/new" for ::1 at 2019-04-16 17:40:56 +0100
+  [1m[35m (2.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#new as HTML
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/jbloggs/myRubyApps/wCarringtonElson/reviewApp/app/models/product.rb:5: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/models/product.rb:5: syntax error, unexpected keyword_end, expecting end-of-input
+app/controllers/products_controller.rb:7:in `new'
+Started GET "/products/new" for ::1 at 2019-04-16 17:41:42 +0100
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (48.8ms)
+Completed 500 Internal Server Error in 132ms (ActiveRecord: 15.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `averageCost' for #<Product:0x00005632a7843ea8>
+Did you mean?  avgCost):
+    11: 
+    12: <div class="form-group">
+    13:     <%= f.label :averageCost %><br />
+    14:     <%= f.number_field :averageCost, class:'form-control' %> <br />
+    15: </div>
+    16: 
+    17: <div class="form-group">
+  
+app/views/products/new.html.erb:14:in `block in _app_views_products_new_html_erb___3146763538821227716_70023236004040'
+app/views/products/new.html.erb:5:in `_app_views_products_new_html_erb___3146763538821227716_70023236004040'
+Started GET "/products/new" for ::1 at 2019-04-16 17:42:11 +0100
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (33.4ms)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 972ms (Views: 961.9ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/products" for ::1 at 2019-04-16 17:44:59 +0100
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lPjbkJMyjnGe4xE04fMAZ1vTA/YuelUgB31L7rp/gaCpiQGTULzcBQS6RvNDL+S18AN4puwgl0TkAen1+8zkmw==", "product"=>{"productName"=>"Iphone", "avgCost"=>"1000", "category"=>"SmartPhone", "releaseDate"=>"1990-10-10", "description"=>"A prototype of the first smartphone - ran on AA batteries ", "prodPhoto"=>#<ActionDispatch::Http::UploadedFile:0x00007f5f10478a80 @tempfile=#<Tempfile:/tmp/RackMultipart20190416-9375-1p2n5oy.jpeg>, @original_filename="brick.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[prodPhoto]\"; filename=\"brick.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit"}
+[paperclip] Trying to link /tmp/RackMultipart20190416-9375-1p2n5oy.jpeg to /tmp/7ceffe3b5595422ac85bb6054d6d38f920190416-9375-2dnk83.jpeg
+[paperclip] Trying to link /tmp/7ceffe3b5595422ac85bb6054d6d38f920190416-9375-2dnk83.jpeg to /tmp/7ceffe3b5595422ac85bb6054d6d38f920190416-9375-cf4rq0.jpeg
+Command :: file -b --mime '/tmp/7ceffe3b5595422ac85bb6054d6d38f920190416-9375-cf4rq0.jpeg'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:16
+[paperclip] Trying to link /tmp/7ceffe3b5595422ac85bb6054d6d38f920190416-9375-2dnk83.jpeg to /tmp/7ceffe3b5595422ac85bb6054d6d38f920190416-9375-45sksq.jpeg
+Command :: file -b --mime '/tmp/7ceffe3b5595422ac85bb6054d6d38f920190416-9375-45sksq.jpeg'
+  [1m[36mProduct Create (18.0ms)[0m  [1m[32mINSERT INTO `products` (`productName`, `avgCost`, `category`, `releaseDate`, `description`, `prodPhoto_file_name`, `prodPhoto_content_type`, `prodPhoto_file_size`, `prodPhoto_updated_at`, `created_at`, `updated_at`) VALUES ('Iphone', 1000, 'SmartPhone', '1990-10-10', 'A prototype of the first smartphone - ran on AA batteries ', 'brick.jpeg', 'image/jpeg', 385815, '2019-04-16 16:44:59', '2019-04-16 16:44:59', '2019-04-16 16:44:59')[0m
+  ↳ app/controllers/products_controller.rb:16
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:16
+Redirected to http://localhost:3000/products
+Completed 302 Found in 90ms (ActiveRecord: 26.6ms)
+
+
+Started GET "/products" for ::1 at 2019-04-16 17:44:59 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/jbloggs/myRubyApps/wCarringtonElson/reviewApp/app/views/products/index.html.erb:17: syntax error, unexpected '<'
+        <tr>
+        ^):
+  
+app/views/products/index.html.erb:17: syntax error, unexpected '<'
+Started GET "/products" for ::1 at 2019-04-16 17:45:47 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (12.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (681.3ms)
+Completed 500 Internal Server Error in 699ms (ActiveRecord: 12.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `product' for #<#<Class:0x00007f5f1c3744c0>:0x00007f5f15c8b830>
+Did you mean?  @products):
+    15: 
+    16:         <% @products.each do %>
+    17:         <tr>
+    18:             <td> <%= product.productName %> </td>
+    19:             <td> <%= product.brand %> </td>
+    20:             <td> <%= product.avgCost %> </td>
+    21:             <td> <%= product.category %> </td>
+  
+app/views/products/index.html.erb:18:in `block in _app_views_products_index_html_erb___2720336632524043009_70023240278220'
+app/views/products/index.html.erb:16:in `_app_views_products_index_html_erb___2720336632524043009_70023240278220'
+Started GET "/products" for ::1 at 2019-04-16 17:46:12 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (13.2ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (17.7ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 13.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `productName' for nil:NilClass):
+    15: 
+    16:         <% @products.each do %>
+    17:         <tr>
+    18:             <td> <%= @product.productName %> </td>
+    19:             <td> <%= @product.brand %> </td>
+    20:             <td> <%= @product.avgCost %> </td>
+    21:             <td> <%= @product.category %> </td>
+  
+app/views/products/index.html.erb:18:in `block in _app_views_products_index_html_erb___2720336632524043009_70023136660040'
+app/views/products/index.html.erb:16:in `_app_views_products_index_html_erb___2720336632524043009_70023136660040'
+Started POST "/products" for ::1 at 2019-04-16 17:50:20 +0100
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lPjbkJMyjnGe4xE04fMAZ1vTA/YuelUgB31L7rp/gaCpiQGTULzcBQS6RvNDL+S18AN4puwgl0TkAen1+8zkmw==", "product"=>{"productName"=>"Iphone", "avgCost"=>"1000", "category"=>"SmartPhone", "releaseDate"=>"1990-10-10", "description"=>"A prototype of the first smartphone - ran on AA batteries ", "prodPhoto"=>#<ActionDispatch::Http::UploadedFile:0x00007f5f100ea058 @tempfile=#<Tempfile:/tmp/RackMultipart20190416-9375-a5hb3b.jpeg>, @original_filename="brick.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[prodPhoto]\"; filename=\"brick.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit"}
+[paperclip] Trying to link /tmp/RackMultipart20190416-9375-a5hb3b.jpeg to /tmp/7ceffe3b5595422ac85bb6054d6d38f920190416-9375-128x3yr.jpeg
+[paperclip] Trying to link /tmp/7ceffe3b5595422ac85bb6054d6d38f920190416-9375-128x3yr.jpeg to /tmp/7ceffe3b5595422ac85bb6054d6d38f920190416-9375-vmqpui.jpeg
+Command :: file -b --mime '/tmp/7ceffe3b5595422ac85bb6054d6d38f920190416-9375-vmqpui.jpeg'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:16
+[paperclip] Trying to link /tmp/7ceffe3b5595422ac85bb6054d6d38f920190416-9375-128x3yr.jpeg to /tmp/7ceffe3b5595422ac85bb6054d6d38f920190416-9375-1gqzclm.jpeg
+Command :: file -b --mime '/tmp/7ceffe3b5595422ac85bb6054d6d38f920190416-9375-1gqzclm.jpeg'
+  [1m[36mProduct Create (2.5ms)[0m  [1m[32mINSERT INTO `products` (`productName`, `avgCost`, `category`, `releaseDate`, `description`, `prodPhoto_file_name`, `prodPhoto_content_type`, `prodPhoto_file_size`, `prodPhoto_updated_at`, `created_at`, `updated_at`) VALUES ('Iphone', 1000, 'SmartPhone', '1990-10-10', 'A prototype of the first smartphone - ran on AA batteries ', 'brick.jpeg', 'image/jpeg', 385815, '2019-04-16 16:50:20', '2019-04-16 16:50:20', '2019-04-16 16:50:20')[0m
+  ↳ app/controllers/products_controller.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:16
+Redirected to http://localhost:3000/products
+Completed 302 Found in 77ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/products" for ::1 at 2019-04-16 17:50:20 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `productName' for nil:NilClass):
+    15: 
+    16:         <% @products.each do %>
+    17:         <tr>
+    18:             <td> <%= @product.productName %> </td>
+    19:             <td> <%= @product.brand %> </td>
+    20:             <td> <%= @product.avgCost %> </td>
+    21:             <td> <%= @product.category %> </td>
+  
+app/views/products/index.html.erb:18:in `block in _app_views_products_index_html_erb___2720336632524043009_70023183112280'
+app/views/products/index.html.erb:16:in `_app_views_products_index_html_erb___2720336632524043009_70023183112280'
+Started GET "/products" for ::1 at 2019-04-16 17:53:03 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (18.4ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `prodPhoto' for nil:NilClass):
+    21:             <td> <%= product.category %> </td>
+    22:             <td> <%= product.releaseDate %> </td>
+    23:             <td> <%= product.description %> </td>
+    24:             <td> <%= image_tag(@product.prodPhoto.url, size: "150x150") if @product.prodPhoto.exists? %> </td>
+    25:             <td> <%= link_to 'Details', product_path(product) %> </td>
+    26: </td> 
+    27:         </tr>
+  
+app/views/products/index.html.erb:24:in `block in _app_views_products_index_html_erb___2720336632524043009_70023182642060'
+app/views/products/index.html.erb:16:in `_app_views_products_index_html_erb___2720336632524043009_70023182642060'
+Started GET "/products" for ::1 at 2019-04-16 17:53:12 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (3.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (14.5ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `prodPhoto' for nil:NilClass):
+    21:             <td> <%= product.category %> </td>
+    22:             <td> <%= product.releaseDate %> </td>
+    23:             <td> <%= product.description %> </td>
+    24:             <td> <%= image_tag(product.prodPhoto.url, size: "150x150") if @product.prodPhoto.exists? %> </td>
+    25:             <td> <%= link_to 'Details', product_path(product) %> </td>
+    26: </td> 
+    27:         </tr>
+  
+app/views/products/index.html.erb:24:in `block in _app_views_products_index_html_erb___2720336632524043009_70023240471780'
+app/views/products/index.html.erb:16:in `_app_views_products_index_html_erb___2720336632524043009_70023240471780'
+Started GET "/products" for ::1 at 2019-04-16 17:53:47 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 176ms (Views: 174.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-16 17:56:57 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (2.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 139ms (Views: 126.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products" for ::1 at 2019-04-16 18:16:27 +0100
+  [1m[35m (4.8ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (4.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (11.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 136ms (Views: 130.8ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-16 18:16:29 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (22.1ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `photo' for #<Product:0x00007f5f1013f558>):
+     9: <p>releaseDate: <%= @product.releaseDate  %>   </p>
+    10: <p>description: <%= @product.description  %>   </p>
+    11: 
+    12: <p>Product Photo: <%= image_tag(@product.photo.url, size: "150x150") if @product.photo.exists? %> </p>
+    13: 
+    14: 
+    15: 
+  
+app/views/products/show.html.erb:12:in `_app_views_products_show_html_erb___55130772862769682_70023134179840'
+Started GET "/products/1" for ::1 at 2019-04-16 18:16:49 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 177ms (Views: 172.7ms | ActiveRecord: 3.1ms)
+
+

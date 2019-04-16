@@ -1,2 +1,16 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<div class ="containter">
+<h3>Product Details</h3>
+
+<p>Product Name: <%= @product.productName %>  </p>
+<p>Brand: <%= @product.brand %>  </p>
+<p>Average Cost:<%= @product.avgCost %>  </p>
+
+<p>category:<%= @product.category %>  </p>
+<p>releaseDate: <%= @product.releaseDate  %>   </p>
+<p>description: <%= @product.description  %>   </p>
+
+<p>Product Photo: <%= image_tag(@product.prodPhoto.url, size: "150x150") if @product.prodPhoto.exists? %> </p>
+
+
+
+</div>Product

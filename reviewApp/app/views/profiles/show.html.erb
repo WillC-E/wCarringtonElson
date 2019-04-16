@@ -7,6 +7,8 @@
 <p>City:<%= @profile.city %>  </p>
 <p>Country: <%= @profile.country  %>   </p>
 
+<p>Photo: <%= image_tag(@profile.photo.url, size: "150x150") if @profile.photo.exists? %> </p>
+
 
 
 </div>

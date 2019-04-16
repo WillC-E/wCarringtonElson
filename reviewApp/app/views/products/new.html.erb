@@ -1,2 +1,49 @@
-<h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
+
+<div class="container">
+    <h2> Create Profile </h2>
+
+<%= form_for :product, url: products_path do |f| %>
+
+<div class="form-group">
+    <%= f.label :productName %><br />
+    <%= f.text_field :productName, class:'form-control' %> <br />
+</div>
+
+<div class="form-group">
+    <%= f.label :brand %><br />
+    <%= f.text_field :brand, class:'form-control' %> <br />
+</div>
+
+<div class="form-group">
+    <%= f.label :avgCost %><br />
+    <%= f.number_field :avgCost, class:'form-control' %> <br />
+</div>
+
+<div class="form-group">
+    <%= f.label :category %><br />
+    <%= f.text_field :category, class:'form-control' %> <br />
+</div>
+
+
+<div class="form-group">
+    <%= f.label :releaseDate %><br />
+    <%= f.date_field :releaseDate, class:'form-control' %> <br />
+</div>
+
+<div class="form-group">
+    <%= f.label :description %><br />
+    <%= f.text_field :description, class:'form-control' %> <br />
+</div>
+
+<div class="form-group">
+    <%= f.label :prodPhoto %><br />
+    <%= f.file_field :prodPhoto, class:'form-control' %> <br />
+</div>
+
+
+<%= f.submit "Submit", class:'btn-primary' %>
+
+
+<% end %>
+
+</div>

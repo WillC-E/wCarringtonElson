@@ -6,7 +6,7 @@ one:
   address: MyString
   city: MyString
   country: MyString
-  photo: MyString
+  photo: 
   userid: MyString
 
 two:
@@ -15,5 +15,5 @@ two:
   address: MyString
   city: MyString
   country: MyString
-  photo: MyString
+  photo: 
   userid: MyString

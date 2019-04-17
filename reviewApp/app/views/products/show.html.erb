@@ -10,7 +10,38 @@
 <p>description: <%= @product.description  %>   </p>
 
 <p>Product Photo: <%= image_tag(@product.prodPhoto.url, size: "150x150") if @product.prodPhoto.exists? %> </p>
+ <a class="p-2 text-dark" href="#"> <%=link_to 'Write a review', new_review_path({name: @product.productName, id: @product.id}) %> </a>
 
 
 
-</div>Product
+</div>
+
+
+<div class ="countainer">
+    <h2> Reviews </h2>
+
+    <table border="1" class = "table">
+        <tr>
+        	<th> Avatar </th>
+            <th> Author </th>
+            <th> Rating </th>
+            <th> Review Text </th>
+            <th> Review Date</th>
+
+
+        </tr>
+
+        <% @reviews.each do |review|%>
+        <tr>
+        	<
+            <td> <%= review.author %> </td>
+            <td> <%= review.prodRating %> </td>
+            <td> <%= review.reviewText %> </td>
+            <td> <%= review.reviewDate %> </td>
+
+</td> 
+        </tr>
+<% end %>
+
+</table>
+</div>

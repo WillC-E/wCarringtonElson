@@ -1196,3 +1196,1127 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 177ms (Views: 172.7ms | ActiveRecord: 3.1ms)
 
 
+Started GET "/" for ::1 at 2019-04-17 14:58:12 +0100
+  [1m[35m (109.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (61.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (47.3ms)
+Completed 200 OK in 2433ms (Views: 2379.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-04-17 14:58:33 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 69ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-04-17 14:58:35 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OZQpjmy4VsIbqU5p870xuihtIG8b639jWATt8atj+yyyPHvRqFEOVpyrtZ4CscVYgTBL7KSEW7oNU3OenNIvOQ==", "userId"=>"willce", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userId` = 'willce' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+Redirected to http://localhost:3000/
+Completed 302 Found in 308ms (ActiveRecord: 75.5ms)
+
+
+Started GET "/" for ::1 at 2019-04-17 14:58:35 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 110ms (Views: 100.6ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/profiles/new" for ::1 at 2019-04-17 14:58:39 +0100
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/new.html.erb within layouts/application (117.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 337ms (Views: 208.0ms | ActiveRecord: 38.5ms)
+
+
+Started POST "/profiles" for ::1 at 2019-04-17 14:59:06 +0100
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SQ9IDecEhmiUAsLnH4zLis+m7t2nEaQiYK4Cvx03OSIM7OYHEiJAulTk9NW8JolQFvvXhhUxtix/X5QzzHJOtA==", "profile"=>{"fullName"=>"cxv", "dob"=>"0001-01-16", "address"=>"123 Road", "city"=>"Sheffield", "country"=>"UK", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007f83cc24b0d8 @tempfile=#<Tempfile:/tmp/RackMultipart20190417-1517-1b2ylh8.jpg>, @original_filename="happy-businessman-isolated-handsome-man-260nw-609414131.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[photo]\"; filename=\"happy-businessman-isolated-handsome-man-260nw-609414131.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit"}
+[paperclip] Trying to link /tmp/RackMultipart20190417-1517-1b2ylh8.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190417-1517-f9jxic.jpg
+[paperclip] Trying to link /tmp/d925024b950c390b7380159bc2cda92a20190417-1517-f9jxic.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190417-1517-1o8utei.jpg
+Command :: file -b --mime '/tmp/d925024b950c390b7380159bc2cda92a20190417-1517-1o8utei.jpg'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:16
+[paperclip] Trying to link /tmp/d925024b950c390b7380159bc2cda92a20190417-1517-f9jxic.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190417-1517-1q4kwbg.jpg
+Command :: file -b --mime '/tmp/d925024b950c390b7380159bc2cda92a20190417-1517-1q4kwbg.jpg'
+  [1m[36mProfile Create (42.2ms)[0m  [1m[32mINSERT INTO `profiles` (`fullName`, `dob`, `address`, `city`, `country`, `photo_file_name`, `photo_content_type`, `photo_file_size`, `photo_updated_at`, `created_at`, `updated_at`) VALUES ('cxv', '0001-01-16', '123 Road', 'Sheffield', 'UK', 'happy-businessman-isolated-handsome-man-260nw-609414131.jpg', 'image/webp', 6348, '2019-04-17 13:59:06', '2019-04-17 13:59:06', '2019-04-17 13:59:06')[0m
+  ↳ app/controllers/profiles_controller.rb:16
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:16
+Redirected to http://localhost:3000/profiles/4
+Completed 302 Found in 179ms (ActiveRecord: 43.3ms)
+
+
+Started GET "/profiles/4" for ::1 at 2019-04-17 14:59:06 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:11
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (10.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 151ms (Views: 113.2ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 14:59:18 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (8.6ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (110.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 349ms (Views: 223.7ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 14:59:25 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 160ms (Views: 77.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 14:59:31 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 131ms (Views: 120.1ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 14:59:37 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 103ms (Views: 100.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 15:00:15 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (4.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 108ms (Views: 92.4ms | ActiveRecord: 9.8ms)
+
+
+Started DELETE "/sessions/active" for ::1 at 2019-04-17 15:00:24 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Y5zhCPRWJ85yYCv98NM7DHcxVtHWiAlqoGpnXCBc36tyA4zFLOhSuZcGwJDaWFZO2L+e8mjHLgfkuH6MPvkoSg==", "id"=>"active"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-04-17 15:00:24 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 101ms (Views: 100.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-04-17 15:04:02 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 156ms (Views: 153.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 15:04:04 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 81ms (Views: 79.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 15:04:27 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 105ms (Views: 100.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/review/new" for ::1 at 2019-04-17 15:25:12 +0100
+  [1m[35m (0.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('5832565980762348660', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateReviews (20190417141049)
+  [1m[35m (24.2ms)[0m  [1m[35mCREATE TABLE `reviews` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `author` varchar(255), `prodRating` int, `reviewText` varchar(255), `reviewDate` date, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20190417141049_create_reviews.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (8.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190417141049')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (14.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('5832565980762348660')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Started GET "/review/new" for ::1 at 2019-04-17 15:25:55 +0100
+  [1m[35m (2.5ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/review/new"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/reviews/new" for ::1 at 2019-04-17 15:26:12 +0100
+  
+LoadError (Unable to autoload constant ReviewsController, expected /home/jbloggs/myRubyApps/wCarringtonElson/reviewApp/app/controllers/reviews_controller.rb to define it):
+  
+activesupport (5.2.3) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+bootsnap (1.4.3) lib/bootsnap/load_path_cache/core_ext/active_support.rb:60:in `block in load_missing_constant'
+bootsnap (1.4.3) lib/bootsnap/load_path_cache/core_ext/active_support.rb:16:in `allow_bootsnap_retry'
+bootsnap (1.4.3) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.3) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.3) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/reviews/new" for ::1 at 2019-04-17 15:26:43 +0100
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 4.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"reviews"}, missing required keys: [:id]):
+    2: <div class="container">
+    3:     <h2> Create a Review </h2>
+    4: 
+    5: <%= form_for :review, url: review_path do |f| %>
+    6: 
+    7: <div class="form-group">
+    8:     <%= f.label :author %><br />
+  
+app/views/reviews/new.html.erb:5:in `_app_views_reviews_new_html_erb___3095157042341840584_46930042796060'
+Started GET "/reviews/new" for ::1 at 2019-04-17 15:27:25 +0100
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (147.1ms)
+Completed 200 OK in 837ms (Views: 834.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reviews" for ::1 at 2019-04-17 15:27:49 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YUVEkwStIBxhcnAyHRFgDl4GqU7Ld/A6yiy4TaPGykhw2ile3BNVa4QUm183mg1M8YhhbXU411eO/qGdvWM9qQ==", "review"=>{"author"=>"Will", "prodRating"=>"6", "reviewText"=>"10", "reviewDate"=>"2018-01-11"}, "commit"=>"Submit"}
+Completed 500 Internal Server Error in 485ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `review_params' for #<ReviewsController:0x00007fb0450cc838>
+Did you mean?  review_path):
+  
+app/controllers/reviews_controller.rb:16:in `create'
+Started POST "/reviews" for ::1 at 2019-04-17 15:28:21 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YUVEkwStIBxhcnAyHRFgDl4GqU7Ld/A6yiy4TaPGykhw2ile3BNVa4QUm183mg1M8YhhbXU411eO/qGdvWM9qQ==", "review"=>{"author"=>"Will", "prodRating"=>"6", "reviewText"=>"10", "reviewDate"=>"2018-01-11"}, "commit"=>"Submit"}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:17
+  [1m[36mReview Create (2.2ms)[0m  [1m[32mINSERT INTO `reviews` (`author`, `prodRating`, `reviewText`, `reviewDate`, `created_at`, `updated_at`) VALUES ('Will', 6, '10', '2018-01-11', '2019-04-17 14:28:21', '2019-04-17 14:28:21')[0m
+  ↳ app/controllers/reviews_controller.rb:17
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:17
+Redirected to http://localhost:3000/reviews/1
+Completed 302 Found in 48ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/reviews/1" for ::1 at 2019-04-17 15:28:21 +0100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (2.3ms)[0m  [1m[34mSELECT  `reviews`.* FROM `reviews` WHERE `reviews`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/reviews_controller.rb:12
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 150ms (Views: 145.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 15:46:17 +0100
+  [1m[35m (0.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (82.2ms)
+Completed 200 OK in 794ms (Views: 758.6ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 15:46:20 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 127ms (Views: 124.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/reviews/new" for ::1 at 2019-04-17 15:46:22 +0100
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 113ms (Views: 83.3ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/reviews/new" for ::1 at 2019-04-17 16:01:54 +0100
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ReviewsController#new as HTML
+Completed 500 Internal Server Error in 477ms (ActiveRecord: 3.0ms)
+
+
+  
+NameError (undefined local variable or method `prams' for #<ReviewsController:0x00007f82b1bdd7e8>
+Did you mean?  params
+               params=):
+  
+app/controllers/reviews_controller.rb:9:in `new'
+Started GET "/reviews/new" for ::1 at 2019-04-17 16:02:25 +0100
+Processing by ReviewsController#new as HTML
+Completed 500 Internal Server Error in 599ms (ActiveRecord: 0.8ms)
+
+
+  
+NameError (undefined local variable or method `pramas' for #<ReviewsController:0x00007f82b257cc90>
+Did you mean?  params):
+  
+app/controllers/reviews_controller.rb:9:in `new'
+Started GET "/reviews/new" for ::1 at 2019-04-17 16:02:49 +0100
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (99.4ms)
+Completed 200 OK in 268ms (Views: 240.1ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 16:02:54 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 234ms (Views: 224.8ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 16:02:56 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (3.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 121ms (Views: 111.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/reviews/new?id=1&name=Iphone" for ::1 at 2019-04-17 16:02:58 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"id"=>"1", "name"=>"Iphone"}
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 122ms (Views: 116.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reviews" for ::1 at 2019-04-17 16:03:16 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0HOxWrKqHVc8dqHxh7X7l92ZaansvXrYiGr5SHZV0DhKa30RpgmillSRZDJvK05F7CoTl93qJi8IReuN//QdDA==", "review"=>{"author"=>"Will", "prodName"=>"Iphone", "prodId"=>"1", "prodRating"=>"5", "reviewText"=>"10", "reviewDate"=>"1111-11-11"}, "commit"=>"Submit"}
+Unpermitted parameter: :prodName
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'prodId' for Review.):
+  
+app/controllers/reviews_controller.rb:19:in `create'
+Started GET "/reviews" for ::1 at 2019-04-17 16:05:23 +0100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  Rendered reviews/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 153ms (Views: 126.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 16:05:26 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (4.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (49.8ms)
+Completed 200 OK in 136ms (Views: 124.1ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 16:05:29 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 114ms (Views: 111.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/reviews/new?id=1&name=Iphone" for ::1 at 2019-04-17 16:05:31 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"id"=>"1", "name"=>"Iphone"}
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 157ms (Views: 127.8ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/reviews" for ::1 at 2019-04-17 16:05:41 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MEiwAHrrtCem+W0VYy8HhDFaA/HmgY52tZ11laCj4o+qUHxLbkgL5s4eqNaLsbJWAOl5z9fW0oE1smdQKQIvuw==", "review"=>{"author"=>"sdfdsf", "prodName"=>"Iphone", "prodID"=>"1", "prodRating"=>"2322", "reviewText"=>"dsf", "reviewDate"=>"0434-03-31"}, "commit"=>"Submit"}
+Unpermitted parameter: :prodName
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:20
+  [1m[36mReview Create (5.2ms)[0m  [1m[32mINSERT INTO `reviews` (`author`, `prodRating`, `reviewText`, `reviewDate`, `created_at`, `updated_at`, `prodID`) VALUES ('sdfdsf', 2322, 'dsf', '0434-03-31', '2019-04-17 15:05:41', '2019-04-17 15:05:41', 1)[0m
+  ↳ app/controllers/reviews_controller.rb:20
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:20
+Redirected to http://localhost:3000/reviews/2
+Completed 302 Found in 11ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/reviews/2" for ::1 at 2019-04-17 16:05:41 +0100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mReview Load (1.8ms)[0m  [1m[34mSELECT  `reviews`.* FROM `reviews` WHERE `reviews`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/reviews_controller.rb:15
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 139ms (Views: 134.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/reviews/" for ::1 at 2019-04-17 16:05:50 +0100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  Rendered reviews/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 139ms (Views: 135.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reviews/" for ::1 at 2019-04-17 16:09:51 +0100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (2.0ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews`[0m
+  ↳ app/views/reviews/index.html.erb:15
+  Rendered reviews/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 167ms (Views: 162.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 16:10:27 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 115ms (Views: 113.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 16:10:37 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 72ms (Views: 70.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/reviews/new?id=1&name=Iphone" for ::1 at 2019-04-17 16:10:43 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"id"=>"1", "name"=>"Iphone"}
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 92ms (Views: 91.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reviews" for ::1 at 2019-04-17 16:10:59 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"829x/pexc6t8v4bJlKrFM9iEO9s1h4I85YqtWY6LWYdpd721gxLMahRYQwp8NHDh6TdB5QTQ3stlpb+cByqUsw==", "review"=>{"author"=>"test", "prodName"=>"Iphone", "prodID"=>"1", "prodRating"=>"34", "reviewText"=>"dsfsf", "reviewDate"=>"1515-12-15"}, "commit"=>"Submit"}
+Unpermitted parameter: :prodName
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:20
+  [1m[36mReview Create (3.3ms)[0m  [1m[32mINSERT INTO `reviews` (`author`, `prodRating`, `reviewText`, `reviewDate`, `created_at`, `updated_at`, `prodID`) VALUES ('test', 34, 'dsfsf', '1515-12-15', '2019-04-17 15:10:59', '2019-04-17 15:10:59', 1)[0m
+  ↳ app/controllers/reviews_controller.rb:20
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:20
+Redirected to http://localhost:3000/reviews/3
+Completed 302 Found in 11ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/reviews/3" for ::1 at 2019-04-17 16:11:00 +0100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mReview Load (1.6ms)[0m  [1m[34mSELECT  `reviews`.* FROM `reviews` WHERE `reviews`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/reviews_controller.rb:15
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 139ms (Views: 135.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/reviews/" for ::1 at 2019-04-17 16:11:05 +0100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews`[0m
+  ↳ app/views/reviews/index.html.erb:15
+  Rendered reviews/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 131ms (Views: 128.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 16:11:10 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 96ms (Views: 87.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 16:11:30 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 132ms (Views: 125.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-17 16:11:42 +0100
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 149ms (Views: 148.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-04-17 16:12:58 +0100
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OuCA2+x3b/GCxEQDax+hGbPOUCQsCgEAUpjZijbhsDcrf+0WNMkahmeir25BlMxbHECYB5JFJm0WSsBaKERH1g==", "product"=>{"productName"=>"pc", "brand"=>"Dell", "avgCost"=>"1555", "category"=>"Computuer", "releaseDate"=>"0015-12-15", "description"=>"hgfhgfhfhfhgfx", "prodPhoto"=>#<ActionDispatch::Http::UploadedFile:0x00007f82b2b70098 @tempfile=#<Tempfile:/tmp/RackMultipart20190417-2943-qx4v4c.jpg>, @original_filename="happy-businessman-isolated-handsome-man-260nw-609414131.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[prodPhoto]\"; filename=\"happy-businessman-isolated-handsome-man-260nw-609414131.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit"}
+[paperclip] Trying to link /tmp/RackMultipart20190417-2943-qx4v4c.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190417-2943-f3ei5u.jpg
+[paperclip] Trying to link /tmp/d925024b950c390b7380159bc2cda92a20190417-2943-f3ei5u.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190417-2943-1yixyy6.jpg
+Command :: file -b --mime '/tmp/d925024b950c390b7380159bc2cda92a20190417-2943-1yixyy6.jpg'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:16
+[paperclip] Trying to link /tmp/d925024b950c390b7380159bc2cda92a20190417-2943-f3ei5u.jpg to /tmp/d925024b950c390b7380159bc2cda92a20190417-2943-1vxl8wi.jpg
+Command :: file -b --mime '/tmp/d925024b950c390b7380159bc2cda92a20190417-2943-1vxl8wi.jpg'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO `products` (`productName`, `brand`, `avgCost`, `category`, `releaseDate`, `description`, `prodPhoto_file_name`, `prodPhoto_content_type`, `prodPhoto_file_size`, `prodPhoto_updated_at`, `created_at`, `updated_at`) VALUES ('pc', 'Dell', 1555, 'Computuer', '0015-12-15', 'hgfhgfhfhfhgfx', 'happy-businessman-isolated-handsome-man-260nw-609414131.jpg', 'image/webp', 6348, '2019-04-17 15:12:58', '2019-04-17 15:12:58', '2019-04-17 15:12:58')[0m
+  ↳ app/controllers/products_controller.rb:16
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:16
+Redirected to http://localhost:3000/products
+Completed 302 Found in 95ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 16:12:58 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 137ms (Views: 133.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/products/3" for ::1 at 2019-04-17 16:13:01 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 141ms (Views: 139.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/3" for ::1 at 2019-04-17 16:17:30 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (3.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:12
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 182ms (Views: 131.3ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/products/3" for ::1 at 2019-04-17 16:17:54 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (3.9ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:12
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 135ms (Views: 128.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/products/3" for ::1 at 2019-04-17 16:17:58 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:12
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 135ms (Views: 132.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 16:18:04 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 161ms (Views: 130.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 16:18:05 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:12
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 118ms (Views: 112.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 16:18:58 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:12
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    30: 
+    31:         </tr>
+    32: 
+    33:         <% @reviews.each do |review|%>
+    34:         <tr>
+    35:             <td> <%= review.author %> </td>
+    36:             <td> <%= review.prodRating %> </td>
+  
+app/views/products/show.html.erb:33:in `_app_views_products_show_html_erb___4159313845356755433_70099654051380'
+Started GET "/products/1" for ::1 at 2019-04-17 16:20:02 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (6.9ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Load (3.1ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews`[0m
+  ↳ app/views/products/show.html.erb:33
+  Rendered products/show.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 190ms (Views: 137.8ms | ActiveRecord: 26.3ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 16:21:07 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  [1m[36mReview Load (5.7ms)[0m  [1m[34mSELECT  `reviews`.* FROM `reviews` WHERE `reviews`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:12
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 8.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Review:0x00007f82b1d35708>):
+    30: 
+    31:         </tr>
+    32: 
+    33:         <% @reviews.each do |review|%>
+    34:         <tr>
+    35:             <td> <%= review.author %> </td>
+    36:             <td> <%= review.prodRating %> </td>
+  
+app/views/products/show.html.erb:33:in `_app_views_products_show_html_erb___4159313845356755433_70099652923940'
+Started GET "/products/1" for ::1 at 2019-04-17 16:21:51 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+Completed 404 Not Found in 52ms (ActiveRecord: 15.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review without an ID):
+  
+app/controllers/products_controller.rb:12:in `show'
+Started GET "/products/1" for ::1 at 2019-04-17 16:25:04 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+Completed 500 Internal Server Error in 506ms (ActiveRecord: 11.1ms)
+
+
+  
+NameError (undefined local variable or method `all' for #<ProductsController:0x00007f82b278a640>):
+  
+app/controllers/products_controller.rb:12:in `show'
+Started GET "/products/1" for ::1 at 2019-04-17 16:26:51 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+Completed 500 Internal Server Error in 470ms (ActiveRecord: 4.2ms)
+
+
+  
+NameError (undefined local variable or method `all' for #<ProductsController:0x00007f82b127f958>):
+  
+app/controllers/products_controller.rb:12:in `show'
+Started GET "/products/1" for ::1 at 2019-04-17 16:27:54 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Load (5.6ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`prodID` = 1[0m
+  ↳ app/views/products/show.html.erb:33
+  Rendered products/show.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 208ms (Views: 154.0ms | ActiveRecord: 17.2ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 16:28:10 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Load (4.5ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`prodID` = 5[0m
+  ↳ app/views/products/show.html.erb:33
+  Rendered products/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 187ms (Views: 129.1ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 16:29:16 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (3.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Load (3.5ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`prodID` = NULL[0m
+  ↳ app/views/products/show.html.erb:33
+  Rendered products/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 178ms (Views: 116.7ms | ActiveRecord: 26.7ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 16:29:20 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Load (15.0ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`prodID` = NULL[0m
+  ↳ app/views/products/show.html.erb:33
+  Rendered products/show.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 132ms (Views: 115.8ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 16:30:20 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Load (3.4ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`prodID` = 1[0m
+  ↳ app/views/products/show.html.erb:33
+  Rendered products/show.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 149ms (Views: 124.0ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 16:30:31 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (10.3ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 132ms (Views: 120.7ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/products/3" for ::1 at 2019-04-17 16:30:33 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Load (16.7ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`prodID` = 3[0m
+  ↳ app/views/products/show.html.erb:33
+  Rendered products/show.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 140ms (Views: 121.4ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/reviews/new?id=3&name=pc" for ::1 at 2019-04-17 16:30:35 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"id"=>"3", "name"=>"pc"}
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 118ms (Views: 116.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reviews" for ::1 at 2019-04-17 16:30:48 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/Rk4ynfBJcM+zO4S4AX6xfBttYUiRjP6hhdtSib/98pnAfSBY2KaAlYrK9EIm08Xwd7PuxMRbw0GOH+Pr146/g==", "review"=>{"author"=>"Will", "prodName"=>"pc", "prodID"=>"3", "prodRating"=>"2", "reviewText"=>"sdf", "reviewDate"=>"51515-12-15"}, "commit"=>"Submit"}
+Unpermitted parameter: :prodName
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:20
+  [1m[36mReview Create (2.4ms)[0m  [1m[32mINSERT INTO `reviews` (`author`, `prodRating`, `reviewText`, `reviewDate`, `created_at`, `updated_at`, `prodID`) VALUES ('Will', 2, 'sdf', '51515-12-15', '2019-04-17 15:30:48', '2019-04-17 15:30:48', 3)[0m
+  ↳ app/controllers/reviews_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/reviews_controller.rb:20
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Incorrect date value: '51515-12-15' for column 'reviewDate' at row 1: INSERT INTO `reviews` (`author`, `prodRating`, `reviewText`, `reviewDate`, `created_at`, `updated_at`, `prodID`) VALUES ('Will', 2, 'sdf', '51515-12-15', '2019-04-17 15:30:48', '2019-04-17 15:30:48', 3)):
+  
+app/controllers/reviews_controller.rb:20:in `create'
+Started POST "/reviews" for ::1 at 2019-04-17 16:30:58 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zRkR9LXz9rZ8eiXbe4lq2byUV365t0d20EPugjeA9r3chnw5bU2DwZkczrZRAgebExqfXQf4YBuUkfdSKSUBXA==", "review"=>{"author"=>"Will", "prodName"=>"pc", "prodID"=>"3", "prodRating"=>"2", "reviewText"=>"sdf", "reviewDate"=>"1515-12-15"}, "commit"=>"Submit"}
+Unpermitted parameter: :prodName
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:20
+  [1m[36mReview Create (14.0ms)[0m  [1m[32mINSERT INTO `reviews` (`author`, `prodRating`, `reviewText`, `reviewDate`, `created_at`, `updated_at`, `prodID`) VALUES ('Will', 2, 'sdf', '1515-12-15', '2019-04-17 15:30:58', '2019-04-17 15:30:58', 3)[0m
+  ↳ app/controllers/reviews_controller.rb:20
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:20
+Redirected to http://localhost:3000/reviews/4
+Completed 302 Found in 26ms (ActiveRecord: 15.7ms)
+
+
+Started GET "/reviews/4" for ::1 at 2019-04-17 16:30:58 +0100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mReview Load (1.8ms)[0m  [1m[34mSELECT  `reviews`.* FROM `reviews` WHERE `reviews`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/reviews_controller.rb:15
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 137ms (Views: 132.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 16:31:01 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (3.1ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 120ms (Views: 116.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 16:31:02 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Load (10.8ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`prodID` = 1[0m
+  ↳ app/views/products/show.html.erb:33
+  Rendered products/show.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 124ms (Views: 111.3ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/products/2" for ::1 at 2019-04-17 16:31:07 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (3.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Load (16.7ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`prodID` = 2[0m
+  ↳ app/views/products/show.html.erb:33
+  Rendered products/show.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 170ms (Views: 147.6ms | ActiveRecord: 20.1ms)
+
+
+Started GET "/products/3" for ::1 at 2019-04-17 16:31:09 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Load (3.2ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`prodID` = 3[0m
+  ↳ app/views/products/show.html.erb:33
+  Rendered products/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 126ms (Views: 115.3ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 16:31:24 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (5.0ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 260ms (Views: 254.1ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 16:31:26 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (2.7ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Load (7.8ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`prodID` = 1[0m
+  ↳ app/views/products/show.html.erb:33
+  Rendered products/show.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 136ms (Views: 123.2ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/products/2" for ::1 at 2019-04-17 16:31:36 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Load (17.8ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`prodID` = 2[0m
+  ↳ app/views/products/show.html.erb:33
+  Rendered products/show.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 148ms (Views: 124.4ms | ActiveRecord: 18.8ms)
+
+
+Started GET "/products/3" for ::1 at 2019-04-17 16:31:39 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (3.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Load (12.9ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`prodID` = 3[0m
+  ↳ app/views/products/show.html.erb:33
+  Rendered products/show.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 148ms (Views: 129.3ms | ActiveRecord: 16.4ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 17:07:24 +0100
+  [1m[35m (9.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (35.7ms)
+Completed 200 OK in 250ms (Views: 234.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-17 17:07:25 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (4.5ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`prodID` = 1[0m
+  ↳ app/views/products/show.html.erb:34
+  Rendered products/show.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 168ms (Views: 148.8ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/reviews/new?id=1&name=Iphone" for ::1 at 2019-04-17 17:07:27 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"id"=>"1", "name"=>"Iphone"}
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 134ms (Views: 123.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reviews" for ::1 at 2019-04-17 17:07:39 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"35fub4wLWaYpQBt5+or5Lu3HKI/+rw5KCeIqHm9WyElFjyIkmKjmZ0Gn3roSFEz83HRSsc/4Ur2JzTjb5vcFfQ==", "review"=>{"author"=>"fdgdfg", "prodName"=>"Iphone", "prodID"=>"1", "prodRating"=>"4", "reviewText"=>"fdg", "reviewDate"=>"1515-12-15"}, "commit"=>"Submit"}
+Unpermitted parameter: :prodName
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:20
+  [1m[36mReview Create (8.8ms)[0m  [1m[32mINSERT INTO `reviews` (`author`, `prodRating`, `reviewText`, `reviewDate`, `created_at`, `updated_at`, `prodID`) VALUES ('fdgdfg', 4, 'fdg', '1515-12-15', '2019-04-17 16:07:39', '2019-04-17 16:07:39', 1)[0m
+  ↳ app/controllers/reviews_controller.rb:20
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:20
+Redirected to http://localhost:3000/reviews/5
+Completed 302 Found in 24ms (ActiveRecord: 17.8ms)
+
+
+Started GET "/reviews/5" for ::1 at 2019-04-17 17:07:39 +0100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  `reviews`.* FROM `reviews` WHERE `reviews`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/reviews_controller.rb:15
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 136ms (Views: 131.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for ::1 at 2019-04-17 17:07:41 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 124ms (Views: 118.2ms | ActiveRecord: 0.7ms)
+
+

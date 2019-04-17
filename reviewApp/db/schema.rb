@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_16_153302) do
+ActiveRecord::Schema.define(version: 2019_04_17_141049) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "productName"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 2019_04_16_153302) do
     t.integer "photo_file_size"
     t.datetime "photo_updated_at"
     t.string "userid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "author"
+    t.integer "prodRating"
+    t.string "reviewText"
+    t.date "reviewDate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

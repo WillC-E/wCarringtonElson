@@ -1,2 +1,28 @@
-<h1>Reviews#index</h1>
-<p>Find me in app/views/reviews/index.html.erb</p>
+<div class ="countainer">
+    <h2> Reviews </h2>
+
+    <table border="1" class = "table">
+        <tr>
+            <th> Author </th>
+            <th> Product ID </th>
+            <th> Rating </th>
+            <th> Review Text </th>
+            <th> Review Date</th>
+
+
+        </tr>
+
+        <% @reviews.each do |review|%>
+        <tr>
+            <td> <%= review.author %> </td>
+            <td> <%= review.prodID %> </td>
+            <td> <%= review.prodRating %> </td>
+            <td> <%= review.reviewText %> </td>
+            <td> <%= review.reviewDate %> </td>
+
+</td> 
+        </tr>
+<% end %>
+
+</table>
+</div>

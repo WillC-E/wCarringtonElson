@@ -10,5 +10,8 @@
 <p>Photo: <%= image_tag(@profile.photo.url, size: "150x150") if @profile.photo.exists? %> </p>
 
 
+<a class="p-2 text-dark" href="#"> <%= link_to 'Edit Profile', edit_profile_path(@profile) %> </a>
+
+
 
 </div>

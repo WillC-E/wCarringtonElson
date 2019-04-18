@@ -14,6 +14,7 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.new(profile_params)
+
     if @profile.save
       redirect_to profile_path(@profile)
     else
@@ -21,7 +22,17 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def update
+    @profile = Profile.find(params[:id])
+    if @profile.update(profile_params)
+      redirect_to @profile
+    else
+      render 'edit'
+    end
+  end
+
   def edit
+    @profile = Profile.find(params[:id])
   end
   private
   def profile_params

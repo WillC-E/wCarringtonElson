@@ -43,8 +43,15 @@
     <% if current_user %>
       <a class="p-2 text-dark" href="#">
         <%= link_to 'log out', session_path('active'), method: :delete %>
-        <%=link_to ' | Create Profile', new_profile_path %>
-      </a>
+
+        <%if checkProfile %>
+          <%=link_to ' | View Profile', profile_path(checkProfile) %>
+            
+        <% else %>
+          <%=link_to ' | Create Profile', new_profile_path %>
+
+        </a>
+        <% end %>
 
       </a>
       <% else %>

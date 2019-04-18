@@ -16,6 +16,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    
     @review = Review.new(review_params)
     if @review.save
       redirect_to review_path(@review)
@@ -29,6 +30,6 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:author, :prodID, :prodRating, :reviewText, :reviewDate)
+    params.require(:review).permit(:author, :prodID, :prodRating, :reviewText, :reviewDate, :profiles_id)
   end
 end

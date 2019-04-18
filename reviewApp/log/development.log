@@ -3272,3 +3272,834 @@ Processing by ProfilesController#show as HTML
 Completed 200 OK in 181ms (Views: 157.4ms | ActiveRecord: 11.7ms)
 
 
+Started GET "/" for ::1 at 2019-04-18 16:51:23 +0100
+  [1m[35m (3.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/home/jbloggs/myRubyApps/wCarringtonElson/reviewApp/app/controllers/application_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/static_pages_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2019-04-18 16:51:35 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 821ms (Views: 812.3ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/" for ::1 at 2019-04-18 16:52:36 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (8.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 861ms (ActiveRecord: 8.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `checkProfile' for #<#<Class:0x00005575cc147c00>:0x00005575cb172848>):
+    44:       <a class="p-2 text-dark" href="#">
+    45:         <%= link_to 'log out', session_path('active'), method: :delete %>
+    46: 
+    47:         <%if checkProfile %>
+    48:         <%=link_to ' | Create Profile', new_profile_path %>
+    49: 
+    50:       </a>
+  
+app/views/layouts/application.html.erb:47:in `_app_views_layouts_application_html_erb__3998903721539517815_46982204039420'
+Started GET "/" for ::1 at 2019-04-18 16:53:38 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 857ms (ActiveRecord: 4.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `checkProfile' for #<#<Class:0x00007fcbc2417ec8>:0x00007fcbc24164b0>):
+    44:       <a class="p-2 text-dark" href="#">
+    45:         <%= link_to 'log out', session_path('active'), method: :delete %>
+    46: 
+    47:         <%if checkProfile %>
+    48:         <%=link_to ' | Create Profile', new_profile_path %>
+    49: 
+    50:       </a>
+  
+app/views/layouts/application.html.erb:47:in `_app_views_layouts_application_html_erb__3998903721539517815_70256557177000'
+Started GET "/" for ::1 at 2019-04-18 16:56:30 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (9.9ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 2 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 500 Internal Server Error in 302ms (ActiveRecord: 19.6ms)
+
+
+  
+ActionView::Template::Error (Mysql2::Error: Unknown column 'profiles.user_id' in 'where clause': SELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 2 LIMIT 1):
+    44:       <a class="p-2 text-dark" href="#">
+    45:         <%= link_to 'log out', session_path('active'), method: :delete %>
+    46: 
+    47:         <%if checkProfile %>
+    48:         <%=link_to ' | Create Profile', new_profile_path %>
+    49: 
+    50:       </a>
+  
+app/controllers/application_controller.rb:13:in `checkProfile'
+app/views/layouts/application.html.erb:47:in `_app_views_layouts_application_html_erb__3998903721539517815_70256546094380'
+Started GET "/" for ::1 at 2019-04-18 16:58:24 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (23.7ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 2 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 236ms (Views: 188.3ms | ActiveRecord: 41.1ms)
+
+
+Started DELETE "/sessions/active" for ::1 at 2019-04-18 16:58:33 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5Fc4Q+OeN6d5XSCFrOvrttvg+aM9v5KCUkY0OLgXi2cPDqxWG3P25JGZzzJwTcjnm55Q72pEsbrNeNatjs7Lcw==", "id"=>"active"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-04-18 16:58:33 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 144ms (Views: 143.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-04-18 16:58:38 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 96ms (Views: 88.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-04-18 16:58:40 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EqTcofj4I3iaVUCOoHmCV+/1NHEMoAwD4dcQQKbBS13AJZ4xXDpeYMY/1Oee/QQggWWSoBkLXjWHMuRNyDT0iQ==", "userId"=>"willce", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (13.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userId` = 'willce' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 13.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'profiles.user_id' in 'where clause': SELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1):
+  
+app/controllers/sessions_controller.rb:11:in `create'
+Started GET "/" for ::1 at 2019-04-18 16:59:09 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 135ms (Views: 133.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-04-18 16:59:11 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 112ms (Views: 107.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-04-18 16:59:12 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kxCAx84IcF7QrMR1EjnKvin1JE0ibDq9XJNhJtLNBJRBkcJXasoNRozGUBwsvUzJR2WCnDfHaIs6dpUrvDi7QA==", "userId"=>"willce", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userId` = 'willce' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  [1m[36mProfile Load (2.4ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Redirected to http://localhost:3000/profiles/new
+Completed 302 Found in 267ms (ActiveRecord: 24.5ms)
+
+
+Started GET "/profiles/new" for ::1 at 2019-04-18 16:59:13 +0100
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  Rendered profiles/new.html.erb within layouts/application (35.6ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 189ms (Views: 155.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/profiles/new" for ::1 at 2019-04-18 17:01:54 +0100
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  Rendered profiles/new.html.erb within layouts/application (8.4ms)
+  [1m[36mProfile Load (2.0ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 163ms (Views: 159.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/profiles" for ::1 at 2019-04-18 17:02:09 +0100
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 102ms (Views: 100.7ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/sessions/active" for ::1 at 2019-04-18 17:02:14 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/o21CiQaRyiSAuah5BmPVyy5yfF4EjvHurx0f4Msr5kV1CEf3PeGa3rGCRY4v6wGbMdgvS/pGP8lgpbqtfXvjQ==", "id"=>"active"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-04-18 17:02:14 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 129ms (Views: 103.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-04-18 17:02:16 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 95ms (Views: 93.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-04-18 17:02:19 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 77ms (Views: 71.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-04-18 17:02:36 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7Ghga8+zi8ihcPth6KHcrZ7X381KMQM9vzYZ15Z+7EqDCCHc0hlfO/kyOwKOBwjTy+R9p1pVl0UPBGA60qdeGg==", "user"=>{"userId"=>"dddddd", "email"=>"123@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Exists (36.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY '123@test.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (2.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:15
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 398ms (Views: 147.5ms | ActiveRecord: 39.0ms)
+
+
+Started POST "/users" for ::1 at 2019-04-18 17:03:19 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wqnhvAUtda4mrmlmaVNlmDJ2UK+iogBJFrNVtmBF/d0p8HWp/cC07c5qhtG19UbJcgj54/VZI3GJjbcjVpy9yQ==", "user"=>{"userId"=>"dddddd", "email"=>"123gfhfgh@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY '123gfhfgh@test.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO `users` (`userId`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('dddddd', '123gfhfgh@test.com', '$2a$10$.tZZoCzbnzWngug4z6Le9ei6GprB6sIlxg2aQ7vfAjZJBugZbz7Xy', '2019-04-18 16:03:19', '2019-04-18 16:03:19')[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (60.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15
+Redirected to http://localhost:3000/static_pages/home
+Completed 302 Found in 284ms (ActiveRecord: 62.8ms)
+
+
+Started GET "/static_pages/home" for ::1 at 2019-04-18 17:03:19 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 142ms (Views: 140.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-04-18 17:03:25 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 111ms (Views: 109.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-04-18 17:05:19 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t+vkexBZ2b/RdQJtTluMueEvTHvRo2RsIDjEACh8G+zYi6XMDfMNTIk3wg4o/VjHtBzuEcHH8BSQCr3tbKWpvA==", "user"=>{"userId"=>"admin2", "email"=>"1@1.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY '1@1.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO `users` (`userId`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('admin2', '1@1.com', '$2a$10$eXMFfuMBf.PsvK0Q16uBFucEPNmKwYgIhQwiNHcpdtCgZdpD4WuvW', '2019-04-18 16:05:19', '2019-04-18 16:05:19')[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15
+Redirected to http://localhost:3000/static_pages/home
+Completed 302 Found in 222ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/static_pages/home" for ::1 at 2019-04-18 17:05:19 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 119ms (Views: 118.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-04-18 17:05:21 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 139ms (Views: 138.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-04-18 17:05:31 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d4AASqg+verwzmbXc8EGBQyC69u1kEusAqSTGyXIXqilAULaDPzA8qyk8r5NRYByYhJNCqA7GZpkQWcWSz3hfA==", "userId"=>"admin2", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userId` = 'admin2' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Redirected to http://localhost:3000/profiles/new
+Completed 302 Found in 216ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles/new" for ::1 at 2019-04-18 17:05:31 +0100
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  Rendered profiles/new.html.erb within layouts/application (17.6ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 120ms (Views: 115.1ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 17:05:37 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (29.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 129ms (Views: 110.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/profiles" for ::1 at 2019-04-18 17:05:43 +0100
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (1.6ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 124ms (Views: 120.4ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/profiles" for ::1 at 2019-04-18 17:06:13 +0100
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I1Z48Rie4MWC1Dcak2QqME9/LJGI/7mQKl9HE1k26w3ID+zk4HMhhmoQ2K1PwglhDwGF3d8Emqi1YaWGb++rGQ==", "profile"=>{"fullName"=>"Will", "dob"=>"1666-12-16", "address"=>"123 Road", "city"=>"Sheffield", "country"=>"UK", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcbc18869d8 @tempfile=#<Tempfile:/tmp/RackMultipart20190418-5027-eyir2j.jpg>, @original_filename="iStock-Unfinished-Business-10.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[photo]\"; filename=\"iStock-Unfinished-Business-10.jpg\"\r\nContent-Type: image/jpeg\r\n">, "users_id"=>"4"}, "commit"=>"Submit"}
+[paperclip] Trying to link /tmp/RackMultipart20190418-5027-eyir2j.jpg to /tmp/7222ac4ab546af04289f04be362d458020190418-5027-r5t9cn.jpg
+[paperclip] Trying to link /tmp/7222ac4ab546af04289f04be362d458020190418-5027-r5t9cn.jpg to /tmp/7222ac4ab546af04289f04be362d458020190418-5027-1t6oe9u.jpg
+Command :: file -b --mime '/tmp/7222ac4ab546af04289f04be362d458020190418-5027-1t6oe9u.jpg'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:18
+[paperclip] Trying to link /tmp/7222ac4ab546af04289f04be362d458020190418-5027-r5t9cn.jpg to /tmp/7222ac4ab546af04289f04be362d458020190418-5027-1pirdj0.jpg
+Command :: file -b --mime '/tmp/7222ac4ab546af04289f04be362d458020190418-5027-1pirdj0.jpg'
+  [1m[36mProfile Create (351.5ms)[0m  [1m[32mINSERT INTO `profiles` (`fullName`, `dob`, `address`, `city`, `country`, `photo_file_name`, `photo_content_type`, `photo_file_size`, `photo_updated_at`, `created_at`, `updated_at`, `users_id`) VALUES ('Will', '1666-12-16', '123 Road', 'Sheffield', 'UK', 'iStock-Unfinished-Business-10.jpg', 'image/jpeg', 441452, '2019-04-18 16:06:13', '2019-04-18 16:06:13', '2019-04-18 16:06:13', 4)[0m
+  ↳ app/controllers/profiles_controller.rb:18
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:18
+Redirected to http://localhost:3000/profiles/7
+Completed 302 Found in 488ms (ActiveRecord: 353.4ms)
+
+
+Started GET "/profiles/7" for ::1 at 2019-04-18 17:06:13 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProfile Load (2.8ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:12
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (3.4ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 158ms (Views: 142.1ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/profiles/7" for ::1 at 2019-04-18 17:06:38 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:12
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (8.4ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 157ms (Views: 142.0ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/profiles" for ::1 at 2019-04-18 17:08:13 +0100
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 118ms (Views: 112.3ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/profiles" for ::1 at 2019-04-18 17:08:36 +0100
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  Rendered profiles/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 169ms (Views: 166.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/profiles/7" for ::1 at 2019-04-18 17:08:38 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:12
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (2.7ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 137ms (Views: 132.0ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/profiles/7" for ::1 at 2019-04-18 17:08:44 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:12
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 107ms (Views: 103.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/profiles/7" for ::1 at 2019-04-18 17:08:53 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProfile Load (3.8ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:12
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 147ms (Views: 140.1ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 17:08:55 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (6.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (16.5ms)
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 135ms (Views: 123.4ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/profiles/7" for ::1 at 2019-04-18 17:08:57 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProfile Load (1.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:12
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (7.6ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 165ms (Views: 159.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/profiles/7" for ::1 at 2019-04-18 17:21:40 +0100
+  [1m[35m (1.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:12
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (698.5ms)
+Completed 500 Internal Server Error in 754ms (ActiveRecord: 13.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `profile' for #<#<Class:0x00007fcbb8ade400>:0x00007fcbb8adc9c0>
+Did you mean?  @profile
+               provide):
+     9: 
+    10: <p>Photo: <%= image_tag(@profile.photo.url, size: "150x150") if @profile.photo.exists? %> </p>
+    11: 
+    12: <% link_to 'Edit', edit_profile_path(profile) %>
+    13: 
+    14: 
+    15: 
+  
+app/views/profiles/show.html.erb:12:in `_app_views_profiles_show_html_erb__281365107468217400_70256476747280'
+Started GET "/profiles/7" for ::1 at 2019-04-18 17:22:01 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:12
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (13.6ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 246ms (Views: 224.9ms | ActiveRecord: 19.3ms)
+
+
+Started GET "/profiles/7" for ::1 at 2019-04-18 17:22:27 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:12
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 199ms (Views: 191.8ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/profiles/7" for ::1 at 2019-04-18 17:22:57 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProfile Load (4.9ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:12
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (0.8ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 200ms (Views: 191.6ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/profiles/7" for ::1 at 2019-04-18 17:23:00 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:12
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (19.7ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 174ms (Views: 169.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/profiles/7" for ::1 at 2019-04-18 17:23:18 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:12
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 149ms (Views: 143.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/profiles/7" for ::1 at 2019-04-18 17:23:40 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:12
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (2.2ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 197ms (Views: 188.8ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/profiles/7/edit" for ::1 at 2019-04-18 17:23:42 +0100
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:35
+  Rendering profiles/edit.html.erb within layouts/application
+  [1m[36mUser Load (15.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  Rendered profiles/edit.html.erb within layouts/application (18.5ms)
+  [1m[36mProfile Load (3.4ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 137ms (Views: 116.7ms | ActiveRecord: 18.7ms)
+
+
+Started PATCH "/profiles/7" for ::1 at 2019-04-18 17:23:52 +0100
+Processing by ProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uGh83SYDcphhcbPJnoVBQMIXbLUiTHXC2nIa1Fiufm0PMtdvttw1lNB686ORN97ygeWCQvzIuAgxk5tR9JzDFQ==", "profile"=>{"fullName"=>"Will", "dob"=>"1666-12-16", "address"=>"123 Road", "city"=>"Sheffield", "country"=>"UK", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcbc2047f50 @tempfile=#<Tempfile:/tmp/RackMultipart20190418-5027-5hm5z9.jpg>, @original_filename="iStock-Unfinished-Business-10.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[photo]\"; filename=\"iStock-Unfinished-Business-10.jpg\"\r\nContent-Type: image/jpeg\r\n">, "users_id"=>"4"}, "commit"=>"Submit", "id"=>"7"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:26
+Completed 500 Internal Server Error in 611ms (ActiveRecord: 0.1ms)
+
+
+  
+NameError (undefined local variable or method `novel_params' for #<ProfilesController:0x00007fcbc2048748>
+Did you mean?  @_params):
+  
+app/controllers/profiles_controller.rb:27:in `update'
+Started PATCH "/profiles/7" for ::1 at 2019-04-18 17:24:13 +0100
+Processing by ProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uGh83SYDcphhcbPJnoVBQMIXbLUiTHXC2nIa1Fiufm0PMtdvttw1lNB686ORN97ygeWCQvzIuAgxk5tR9JzDFQ==", "profile"=>{"fullName"=>"Will", "dob"=>"1666-12-16", "address"=>"123 Road", "city"=>"Sheffield", "country"=>"UK", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcbc1c3fa48 @tempfile=#<Tempfile:/tmp/RackMultipart20190418-5027-1s082ls.jpg>, @original_filename="iStock-Unfinished-Business-10.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[photo]\"; filename=\"iStock-Unfinished-Business-10.jpg\"\r\nContent-Type: image/jpeg\r\n">, "users_id"=>"4"}, "commit"=>"Submit", "id"=>"7"}
+  [1m[36mProfile Load (8.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:26
+  [1m[35m (6.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:27
+[paperclip] Trying to link /tmp/RackMultipart20190418-5027-1s082ls.jpg to /tmp/7222ac4ab546af04289f04be362d458020190418-5027-ry81k.jpg
+[paperclip] Trying to link /tmp/7222ac4ab546af04289f04be362d458020190418-5027-ry81k.jpg to /tmp/7222ac4ab546af04289f04be362d458020190418-5027-1u1fy3g.jpg
+Command :: file -b --mime '/tmp/7222ac4ab546af04289f04be362d458020190418-5027-1u1fy3g.jpg'
+[paperclip] Trying to link /tmp/7222ac4ab546af04289f04be362d458020190418-5027-ry81k.jpg to /tmp/7222ac4ab546af04289f04be362d458020190418-5027-1ihfet9.jpg
+Command :: file -b --mime '/tmp/7222ac4ab546af04289f04be362d458020190418-5027-1ihfet9.jpg'
+  [1m[36mProfile Update (40.4ms)[0m  [1m[33mUPDATE `profiles` SET `photo_file_name` = 'iStock-Unfinished-Business-10.jpg', `photo_updated_at` = '2019-04-18 16:24:13', `updated_at` = '2019-04-18 16:24:13' WHERE `profiles`.`id` = 7[0m
+  ↳ app/controllers/profiles_controller.rb:27
+[paperclip] deleting /home/jbloggs/myRubyApps/wCarringtonElson/reviewApp/public/system/profiles/photos/000/000/007/original/iStock-Unfinished-Business-10.jpg
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:27
+Redirected to http://localhost:3000/profiles/7
+Completed 302 Found in 177ms (ActiveRecord: 58.6ms)
+
+
+Started GET "/profiles/7" for ::1 at 2019-04-18 17:24:13 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:12
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (6.8ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 4 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 153ms (Views: 129.8ms | ActiveRecord: 20.9ms)
+
+
+Started DELETE "/sessions/active" for ::1 at 2019-04-18 17:31:53 +0100
+  [1m[35m (0.4ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/jbloggs/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"g5JUdwEh/0yzpuZWCTSx9Nfbceuk1eUSz5c3iV4DBctoy8Bi+cw+D1tiCeHVkpKll6XYp/MuxipQqdUcaNpF3w==", "id"=>"active"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-04-18 17:31:54 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 1022ms (Views: 1021.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-04-18 17:31:59 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 91ms (Views: 90.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-04-18 17:32:01 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ykpBkuSV54tc1cj4J4nRFbwz5DA2p5gjfQimIAHk32EYywMCQFeakwC/XJEZDVdi0qNC4SMMyhUb7VItbxFgtQ==", "userId"=>"willce", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (10.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`userId` = 'willce' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:10
+  [1m[36mProfile Load (4.3ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:11
+Redirected to http://localhost:3000/profiles/new
+Completed 302 Found in 260ms (ActiveRecord: 24.0ms)
+
+
+Started GET "/profiles/new" for ::1 at 2019-04-18 17:32:01 +0100
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  Rendered profiles/new.html.erb within layouts/application (50.2ms)
+  [1m[36mProfile Load (4.2ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 351ms (Views: 296.2ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/profiles" for ::1 at 2019-04-18 17:32:21 +0100
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BNrK/7dPVG/oS5x5fIB/wLA8DCQFZybrXptLO1gcP7vvg17qT6KVLACPc86gJlyR8EKlaFKcBdPBpamubsV/rw==", "profile"=>{"fullName"=>"Will", "dob"=>"1555-12-15", "address"=>"555", "city"=>"55", "country"=>"55", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007ff01eb56920 @tempfile=#<Tempfile:/tmp/RackMultipart20190418-5957-1k8v82n.jpeg>, @original_filename="brick.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[photo]\"; filename=\"brick.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "users_id"=>"1"}, "commit"=>"Submit"}
+[paperclip] Trying to link /tmp/RackMultipart20190418-5957-1k8v82n.jpeg to /tmp/7ceffe3b5595422ac85bb6054d6d38f920190418-5957-1h0qjjm.jpeg
+[paperclip] Trying to link /tmp/7ceffe3b5595422ac85bb6054d6d38f920190418-5957-1h0qjjm.jpeg to /tmp/7ceffe3b5595422ac85bb6054d6d38f920190418-5957-1red1hv.jpeg
+Command :: file -b --mime '/tmp/7ceffe3b5595422ac85bb6054d6d38f920190418-5957-1red1hv.jpeg'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:18
+[paperclip] Trying to link /tmp/7ceffe3b5595422ac85bb6054d6d38f920190418-5957-1h0qjjm.jpeg to /tmp/7ceffe3b5595422ac85bb6054d6d38f920190418-5957-1rqncef.jpeg
+Command :: file -b --mime '/tmp/7ceffe3b5595422ac85bb6054d6d38f920190418-5957-1rqncef.jpeg'
+  [1m[36mProfile Create (3.7ms)[0m  [1m[32mINSERT INTO `profiles` (`fullName`, `dob`, `address`, `city`, `country`, `photo_file_name`, `photo_content_type`, `photo_file_size`, `photo_updated_at`, `created_at`, `updated_at`, `users_id`) VALUES ('Will', '1555-12-15', '555', '55', '55', 'brick.jpeg', 'image/jpeg', 385815, '2019-04-18 16:32:21', '2019-04-18 16:32:21', '2019-04-18 16:32:21', 1)[0m
+  ↳ app/controllers/profiles_controller.rb:18
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:18
+Redirected to http://localhost:3000/profiles/8
+Completed 302 Found in 68ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/profiles/8" for ::1 at 2019-04-18 17:32:21 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProfile Load (2.3ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 8 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:12
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 142ms (Views: 136.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 17:32:26 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (3.5ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (39.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 175ms (Views: 150.1ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-18 17:32:27 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (5.9ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mReview Load (5.4ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`prodID` = 1[0m
+  ↳ app/views/products/show.html.erb:38
+  Rendered products/show.html.erb within layouts/application (33.1ms)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 231ms (Views: 181.7ms | ActiveRecord: 25.1ms)
+
+
+Started GET "/reviews/new?id=1&name=Iphone" for ::1 at 2019-04-18 17:32:34 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"id"=>"1", "name"=>"Iphone"}
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  Rendered reviews/new.html.erb within layouts/application (10.2ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 103ms (Views: 92.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/profiles/8" for ::1 at 2019-04-18 17:32:36 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 8 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:12
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 144ms (Views: 142.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles/8" for ::1 at 2019-04-18 17:32:43 +0100
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProfile Load (6.0ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`id` = 8 LIMIT 1[0m
+  ↳ app/controllers/profiles_controller.rb:12
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (7.1ms)
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 134ms (Views: 121.4ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/products" for ::1 at 2019-04-18 17:32:44 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (6.4ms)[0m  [1m[34mSELECT `products`.* FROM `products`[0m
+  ↳ app/views/products/index.html.erb:16
+  Rendered products/index.html.erb within layouts/application (19.5ms)
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 181ms (Views: 168.9ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-18 17:33:01 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (6.4ms)[0m  [1m[34mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/products_controller.rb:11
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mUser Load (17.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mReview Load (5.3ms)[0m  [1m[34mSELECT `reviews`.* FROM `reviews` WHERE `reviews`.`prodID` = 1[0m
+  ↳ app/views/products/show.html.erb:38
+  Rendered products/show.html.erb within layouts/application (27.3ms)
+  [1m[36mProfile Load (3.5ms)[0m  [1m[34mSELECT  `profiles`.* FROM `profiles` WHERE `profiles`.`users_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 142ms (Views: 105.7ms | ActiveRecord: 32.9ms)
+
+
+Started DELETE "/sessions/active" for ::1 at 2019-04-18 17:33:15 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lK9DTj+j38Bn4CwY8MlWRob94aiVJPCHmG2ClP7k1t5/9tdbx04eg48kw68sb3UXxoNI5MLf078HU2AByD2Wyg==", "id"=>"active"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-04-18 17:33:15 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 148ms (Views: 146.8ms | ActiveRecord: 0.0ms)
+
+

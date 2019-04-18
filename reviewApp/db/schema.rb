@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_17_141049) do
+ActiveRecord::Schema.define(version: 2019_04_18_140107) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "productName"
@@ -37,9 +37,10 @@ ActiveRecord::Schema.define(version: 2019_04_17_141049) do
     t.string "photo_content_type"
     t.integer "photo_file_size"
     t.datetime "photo_updated_at"
-    t.string "userid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "users_id"
+    t.index ["users_id"], name: "index_profiles_on_users_id"
   end
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -49,6 +50,9 @@ ActiveRecord::Schema.define(version: 2019_04_17_141049) do
     t.date "reviewDate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "prodID"
+    t.bigint "profiles_id"
+    t.index ["profiles_id"], name: "index_reviews_on_profiles_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -59,4 +63,5 @@ ActiveRecord::Schema.define(version: 2019_04_17_141049) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "reviews", "profiles", column: "profiles_id"
 end

@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = Profile.new
+   
   end
 
   def show
@@ -24,6 +25,6 @@ class ProfilesController < ApplicationController
   end
   private
   def profile_params
-    params.require(:profile).permit(:fullName, :dob, :address, :city, :country, :photo)
+    params.require(:profile).permit(:fullName, :dob, :address, :city, :country, :photo, :users_id)
   end
 end

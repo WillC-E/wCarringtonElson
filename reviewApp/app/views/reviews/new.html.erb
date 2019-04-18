@@ -28,7 +28,7 @@
 
 <div class="form-group">
     <%= f.label :reviewDate %><br />
-    <%= f.date_field :reviewDate, class:'form-control' %> <br />
+    <%= f.date_field :reviewDate, class:'form-control', value: Date.today.strftime %> <br />
 </div>
 
 

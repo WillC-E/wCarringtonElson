@@ -10,7 +10,11 @@
 <p>description: <%= @product.description  %>   </p>
 
 <p>Product Photo: <%= image_tag(@product.prodPhoto.url, size: "150x150") if @product.prodPhoto.exists? %> </p>
+<% if current_user %>
  <a class="p-2 text-dark" href="#"> <%=link_to 'Write a review', new_review_path({name: @product.productName, id: @product.id}) %> </a>
+      </a>
+      
+      <% end %>
 
 
 

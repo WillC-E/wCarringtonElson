@@ -9,7 +9,10 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @reviews = Review.where(:products_id => @product.id)
+    #@reviews = Review.where(:products_id => @product.id)
+    @review = Review.joins(:profile).where(:products_id => @product.id)
+    
+
   end
 
   def create

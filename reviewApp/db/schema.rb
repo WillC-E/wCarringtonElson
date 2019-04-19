@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_19_112121) do
+ActiveRecord::Schema.define(version: 2019_04_19_152811) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "productName"
@@ -50,10 +50,10 @@ ActiveRecord::Schema.define(version: 2019_04_19_112121) do
     t.date "reviewDate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "profiles_id"
+    t.bigint "profile_id"
     t.bigint "products_id"
     t.index ["products_id"], name: "index_reviews_on_products_id"
-    t.index ["profiles_id"], name: "index_reviews_on_profiles_id"
+    t.index ["profile_id"], name: "index_reviews_on_profile_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -65,5 +65,5 @@ ActiveRecord::Schema.define(version: 2019_04_19_112121) do
   end
 
   add_foreign_key "reviews", "products", column: "products_id"
-  add_foreign_key "reviews", "profiles", column: "profiles_id"
+  add_foreign_key "reviews", "profiles"
 end

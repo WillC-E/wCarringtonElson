@@ -33,13 +33,15 @@
 
         </tr>
 
-        <% @reviews.each do |review|%>
+        <% @review.each do |review|%>
         <tr>
-        	
+        	<td> <%= image_tag(review.profile.photo.url, size:"150x150") %> </td>
             <td> <%= review.author %> </td>
             <td> <%= review.prodRating %> </td>
             <td> <%= review.reviewText %> </td>
             <td> <%= review.reviewDate %> </td>
+
+                </td>
 
 </td> 
         </tr>

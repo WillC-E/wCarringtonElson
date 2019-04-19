@@ -1,4 +1,4 @@
-<div class ="countainer">
+<div class ="container">
     <h2> Reviews </h2>
 
     <table border="1" class = "table">
@@ -15,7 +15,7 @@
         <% @reviews.each do |review|%>
         <tr>
             <td> <%= review.author %> </td>
-            <td> <%= review.prodID %> </td>
+            <td> <%= review.products_id %> </td>
             <td> <%= review.prodRating %> </td>
             <td> <%= review.reviewText %> </td>
             <td> <%= review.reviewDate %> </td>

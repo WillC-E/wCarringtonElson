@@ -1,4 +1,4 @@
-<div class ="containter">
+<div class ="container">
 <h3>Product Details</h3>
 
 <p>Product Name: <%= @product.productName %>  </p>
@@ -16,12 +16,10 @@
       
       <% end %>
 
-
-
 </div>
 
 
-<div class ="countainer">
+<div class ="container">
     <h2> Reviews </h2>
 
     <table border="1" class = "table">
@@ -37,7 +35,7 @@
 
         <% @reviews.each do |review|%>
         <tr>
-        	<
+        	
             <td> <%= review.author %> </td>
             <td> <%= review.prodRating %> </td>
             <td> <%= review.reviewText %> </td>

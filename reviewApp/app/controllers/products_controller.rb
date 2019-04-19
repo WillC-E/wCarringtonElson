@@ -11,8 +11,8 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     #@reviews = Review.where(:products_id => @product.id)
     @review = Review.joins(:profile).where(:products_id => @product.id)
-    
 
+    
   end
 
   def create
@@ -26,6 +26,16 @@ class ProductsController < ApplicationController
 
   def edit
   end
+
+  def search
+    @products = if params[:term]
+      Product.where('productName LIKE ?', "%#{params[:term]}")
+      else
+        Product.all
+      end
+
+  end
+
 
     private
   def product_params

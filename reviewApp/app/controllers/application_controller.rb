@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
 	end
 	helper_method :checkProfile
 
+
 	def authorize
 		redirect_to new_session_path, alert: 'Please log in or register' if current_user.nil?
 	end

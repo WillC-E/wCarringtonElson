@@ -22,6 +22,8 @@
 <div class ="container">
     <h2> Reviews </h2>
 
+
+
     <table border="1" class = "table">
         <tr>
         	<th> Avatar </th>
@@ -35,12 +37,15 @@
 
         <% @review.each do |review|%>
         <tr>
+
         	<td> <%= image_tag(review.profile.photo.url, size:"150x150") %> </td>
             <td> <%= review.author %> </td>
             <td> <%= review.prodRating %> </td>
             <td> <%= review.reviewText %> </td>
             <td> <%= review.reviewDate %> </td>
-
+            <% if checkProfile.id == review.profile_id %>
+            <td> <%=link_to 'Edit', edit_review_path(review.id) %> </td>
+            <% end %>
                 </td>
 
 </td> 

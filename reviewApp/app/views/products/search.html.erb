@@ -1,9 +1,9 @@
 <div class ="container">
-    <%= form_tag search_products_path, method: :get do %>
-    <%= text_field_tag :term, nil, placeholder: 'Search all products', class:'form-control' %>
+
+    <h2> Products </h2>     <%= form_tag search_products_path, method: :get do %>
+    <%= text_field_tag :term, nil, placeholder: 'Search all products', class:'search'%>
     <%= submit_tag "Search", class: 'btn btn-success' %>
     <% end %>
-    <h2> Products </h2>
 
     <table border="1" class = "table">
         <tr>

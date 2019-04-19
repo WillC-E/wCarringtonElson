@@ -13,11 +13,13 @@ class SessionsController < ApplicationController
   	if user && user.authenticate(params[ :password])
   		session[:user_id]=user.id
 
+
       if profile.nil?
         redirect_to new_profile_path
       else
   		redirect_to root_path, notice:
   		"Welcome #{user.userId}, you are now logged in"
+      session[:profile_id] = profile.id
     end
   	else
   		render 'new', alert:

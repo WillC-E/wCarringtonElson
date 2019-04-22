@@ -43,7 +43,7 @@
             <td> <%= review.prodRating %> </td>
             <td> <%= review.reviewText %> </td>
             <td> <%= review.reviewDate %> </td>
-            <% if checkProfile.id == review.profile_id %>
+            <% if current_user && (checkProfile.id == review.profile_id) %>
             <td> <%=link_to 'Edit', edit_review_path(review.id) %> </td>
             <% end %>
                 </td>

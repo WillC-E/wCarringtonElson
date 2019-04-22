@@ -31,7 +31,9 @@
         <a class="nav-link active" href="#"> <%= link_to "Home", root_path %> </a>
         <a class="nav-link active" href="#"> <%= link_to "About", static_pages_about_path %> </a>
         <a class="nav-link active" href="#"> <%= link_to "Contact", '#' %> </a>
-        <a class="nav-link active" href="#"> <%=link_to 'Products', products_path %> </a>
+        <a class="nav-link active" href="#"> <%=link_to 'SmartPhones', products_path({category: 'SmartPhone'}) %> </a>
+        <a class="nav-link active" href="#"> <%=link_to 'TVs', products_path({category: 'TV'}) %> </a>
+        <a class="nav-link active" href="#"> <%=link_to 'PCs', products_path({category: 'PC'}) %> </a>
 
 
 

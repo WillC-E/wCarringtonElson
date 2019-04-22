@@ -5,10 +5,10 @@
 	<div class="field" style="100%">
 		<% if @user.errors.any? %>
 			<div id="error_explanation">
-				<h2>
+				<h4>
 					<%= pluralize(@user.errors.count, "error") %>
-					prohibted this from being saved:
-				</h2>
+					prohibited this from being saved:
+				</h4>
 				<p>
 					<ul>
 						<% @user.errors.full_messages.each do |msg| %>
